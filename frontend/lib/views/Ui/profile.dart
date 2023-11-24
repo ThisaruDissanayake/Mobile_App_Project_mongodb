@@ -14,7 +14,7 @@ class _ProfilePageState extends State<ProfilePage> {
    return  MaterialApp(
       home: Scaffold(
         body:Center(
-          child: Text("This is Profile", style: appstyle(40, Colors.black, FontWeight.bold),),
+          child: Text("Modaya", style: appstyle(40, Colors.black, FontWeight.bold),),
         ),
       )
       );
