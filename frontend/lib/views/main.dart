@@ -11,17 +11,15 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
-  List<Widget> pageList = [
-    
-  ];
+
 
   @override
   Widget build(BuildContext context) {
-    int pageIndex = 0;
+    
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xFFE2E2E2),
-        body: pageList[pageIndex],
+        
         bottomNavigationBar: SafeArea(
             child: Padding(
           padding: const EdgeInsets.all(8),
@@ -44,6 +42,7 @@ class MyApp extends StatelessWidget {
           ),
         )),
       ),
+      
     );
   }
 }
