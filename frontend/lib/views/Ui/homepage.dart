@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:frontend/views/shared/appstyle.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -146,7 +147,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     height: MediaQuery.of(context).size.height*0.12,
                                     width: MediaQuery.of(context).size.width*0.28,
                                     child: CachedNetworkImage(
-                                      imgeUrl:"https://i.ebayimg.com/images/g/fW4AAOSwzOxcbnAt/s-l640.jpg",
+                                      imageUrl:"https://media.gettyimages.com/id/1449656094/photo/a-red-lipstick-in-a-blue-case-uncovered-lying-on-a-white-background.jpg?s=612x612&w=0&k=20&c=9i6QZwtV5ROp-zC3K686L9DFtNnbby4BCbkX7jSZKYQ=",
+                                      fit: BoxFit.fill,
                                     ),
                                   ),
                                 );
@@ -174,6 +176,3 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 }
 
-// ignore: non_constant_identifier_names
-CachedNetworkImage({required String imgeUrl}) {
-}
