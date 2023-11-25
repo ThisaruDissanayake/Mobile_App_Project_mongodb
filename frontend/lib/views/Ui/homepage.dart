@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:frontend/views/shared/appstyle.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:frontend/views/shared/product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: const Color(0xFFE2E2E2),
         body: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Stack(
@@ -84,22 +86,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               itemCount: 6,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
-                                return Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    color: Colors.grey,
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width*0.6,
-                                  ),
-                                );
+                                return const ProductCard(
+                                    price: "20.00",
+                                    category: "Libsticks",
+                                    id: "1",
+                                    name: "Angel Pink",
+                                    image:
+                                        "https://th.bing.com/th/id/OIP.IbWbMs5ZIIzpd4sAs_-MfAHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7 ");
                               }),
                         ),
                         Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(12,20,12,20),
+                              padding:
+                                  const EdgeInsets.fromLTRB(12, 20, 12, 20),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "Latest Products",
@@ -139,21 +142,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 return Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Container(
-                                    decoration:const  BoxDecoration(  
-                                    color: Colors.grey,
-                                    borderRadius: BorderRadius.all(Radius.circular(16))
-                                    ),
-                                    
-                                    height: MediaQuery.of(context).size.height*0.12,
-                                    width: MediaQuery.of(context).size.width*0.28,
+                                    decoration: const BoxDecoration(
+                                        color: Colors.grey,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(16)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.white,
+                                              spreadRadius: 1,
+                                              blurRadius: 0.8,
+                                              offset: Offset(0, 1))
+                                        ]),
+                                    height: MediaQuery.of(context).size.height *
+                                        0.12,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.28,
                                     child: CachedNetworkImage(
-                                      imageUrl:"https://media.gettyimages.com/id/1449656094/photo/a-red-lipstick-in-a-blue-case-uncovered-lying-on-a-white-background.jpg?s=612x612&w=0&k=20&c=9i6QZwtV5ROp-zC3K686L9DFtNnbby4BCbkX7jSZKYQ=",
+                                      imageUrl:
+                                          "https://media.gettyimages.com/id/1449656094/photo/a-red-lipstick-in-a-blue-case-uncovered-lying-on-a-white-background.jpg?s=612x612&w=0&k=20&c=9i6QZwtV5ROp-zC3K686L9DFtNnbby4BCbkX7jSZKYQ=",
                                       fit: BoxFit.fill,
                                     ),
                                   ),
                                 );
                               }),
-                          
                         )
                       ],
                     ),
@@ -175,4 +186,3 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 }
-
