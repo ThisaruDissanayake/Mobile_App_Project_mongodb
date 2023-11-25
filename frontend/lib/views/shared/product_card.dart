@@ -23,16 +23,17 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
+  bool selected = true;
   @override
   Widget build(BuildContext context) {
-    bool selected = true;
+    
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 20, 0),
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(16)),
         child: Container(
           height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width * 0.6,
+          width: MediaQuery.of(context).size.width * 0.65,
           decoration: const BoxDecoration(boxShadow: [
             BoxShadow(
                 color: Colors.white,
@@ -85,13 +86,13 @@ class _ProductCardState extends State<ProductCard> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(left: 4, right: 4),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         widget.price,
-                        style: appstyle(30, Colors.black, FontWeight.w600),
+                        style: appstyle(20, Colors.black, FontWeight.w700),
                       ),
                       Row(
                         children: [
@@ -100,11 +101,12 @@ class _ProductCardState extends State<ProductCard> {
                             style: appstyle(18, Colors.grey, FontWeight.w500),
                           ),
                           const SizedBox(
-                            width: 5,
+                            width: 3,
                           ),
-                          ChoiceChip(label: const Text(" "), selected: selected,
+                          ChoiceChip(label: const Text(""), selected: selected,
                           visualDensity: VisualDensity.compact ,
                           selectedColor: Colors.black,
+                          
                           )
                         ],
                       )

@@ -1,0 +1,50 @@
+[
+    { 
+        "id": "0",
+        "name": "Tubby Todd Bath Co Dream",
+        "category": "women's face wash",
+        "imageUrl": [
+    
+            "https://www.parents.com/thmb/Navf7c6ERu958h7HN6hmelkPOlI=/fit-in/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4oz-Dream-Cream-product-image-f0599c6408cc4d1c8a4ce04488d508e4.jpg",
+            "https://www.parents.com/thmb/Navf7c6ERu958h7HN6hmelkPOlI=/fit-in/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4oz-Dream-Cream-product-image-f0599c6408cc4d1c8a4ce04488d508e4.jpg"
+        ],
+        "sizes":[
+            {"size": "100ml","isSelected":false},
+            {"size": "200ml","isSelected":false},
+            {"size": "300ml","isSelected":false},
+            {"size": "500ml","isSelected":false},
+            {"size": "1000ml","isSelected":false}
+    
+        ],
+        "oldPrice": "650.00",
+        "price": "500.00",
+        "description": "Discover Pinterests best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Janet "
+    },
+
+    {
+        "id": "1",
+        "name": "Baby Magic Baby Lotion Gentle",
+        "category": "Baby",
+        "imageUrl": [
+
+            "https://www.parents.com/thmb/Ubza_64llaJPc4zR_C87lFb39Ug=/fit-in/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/babymagic-66426ef51f5e41498cde68c0e921c7c1.jpg",
+            "https://www.parents.com/thmb/Ubza_64llaJPc4zR_C87lFb39Ug=/fit-in/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/babymagic-66426ef51f5e41498cde68c0e921c7c1.jpg"
+        ],
+        "sizes":[
+            {"size": "100ml","isSelected":false},
+            {"size": "200ml","isSelected":false},
+            {"size": "300ml","isSelected":false},
+            {"size": "500ml","isSelected":false},
+            {"size": "1000ml","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinterests best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
+    }
+
+    
+    
+]
