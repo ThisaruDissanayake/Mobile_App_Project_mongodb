@@ -1,8 +1,14 @@
+// ignore: duplicate_ignore
+// ignore_for_file: unused_field, unused_import
+
 import 'package:flutter/material.dart';
-// ignore: unused_import
+import 'package:frontend/models/sneaker_models.dart';
+import 'package:frontend/services/helper.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:frontend/views/shared/new_creams.dart';
 import 'package:frontend/views/shared/product_card.dart';
+//import 'package:flutter_antd_icons/flutter_antd_icons.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,6 +20,30 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late final TabController _tabController =
       TabController(length: 3, vsync: this);
+
+  late Future<List<Sneakers>> _male;
+  late Future<List<Sneakers>> _female;
+  late Future<List<Sneakers>> _kids;
+
+  void getMale() {
+    _male = Helper().getMaleSneakers();
+  }
+
+  void getFemale() {
+    _female = Helper().getFemaleSneakers();
+  }
+
+  void getKids() {
+    _kids = Helper().getKidSneakers();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getMale();
+    getFemale();
+    getKids();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +79,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             38, Colors.white, FontWeight.bold, 1.2),
                       ),
                       TabBar(
+                          padding: EdgeInsets.zero,
                           indicatorSize: TabBarIndicatorSize.label,
                           indicatorColor: Colors.transparent,
                           controller: _tabController,
@@ -81,20 +112,32 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Column(
                       children: [
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.405,
-                          child: ListView.builder(
-                              itemCount: 6,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) {
-                                return const ProductCard(
-                                    price: "20.00",
-                                    category: "Libsticks",
-                                    id: "1",
-                                    name: "Angel Pink",
-                                    image:
-                                        "https://th.bing.com/th/id/OIP.IbWbMs5ZIIzpd4sAs_-MfAHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7 ");
-                              }),
-                        ),
+                            height: MediaQuery.of(context).size.height * 0.405,
+                            child: FutureBuilder<List<Sneakers>>(
+                                future: _female,
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return const CircularProgressIndicator();
+                                  } else if (snapshot.hasError) {
+                                    return Text("Error ${snapshot.error}");
+                                  } else {
+                                    final female = snapshot.data;
+                                    return ListView.builder(
+                                        itemCount: female!.length,
+                                        scrollDirection: Axis.horizontal,
+                                        itemBuilder: (context, index) {
+                                          final cream = snapshot.data![index];
+                                          return ProductCard(
+                                            price: cream.price,
+                                            category: cream.category,
+                                            id: cream.id,
+                                            name: cream.name,
+                                            image: cream.imageUrl[0],
+                                          );
+                                        });
+                                  }
+                                })),
                         Column(
                           children: [
                             Padding(
@@ -123,8 +166,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                         ),
                                       ),
                                       const Icon(
-                                        Icons.keyboard_double_arrow_right_sharp,
-                                        size: 20,
+                                        Icons.arrow_right,
+                                        size: 50,
                                       )
                                     ],
                                   )
@@ -134,48 +177,47 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ],
                         ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.13,
-                          child: ListView.builder(
-                              itemCount: 6,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) {
-                                return Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                        color: Colors.grey,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(16)),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: Colors.white,
-                                              spreadRadius: 1,
-                                              blurRadius: 0.8,
-                                              offset: Offset(0, 1))
-                                        ]),
-                                    height: MediaQuery.of(context).size.height *
-                                        0.12,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.28,
-                                    child: CachedNetworkImage(
-                                      imageUrl:
-                                          "https://media.gettyimages.com/id/1449656094/photo/a-red-lipstick-in-a-blue-case-uncovered-lying-on-a-white-background.jpg?s=612x612&w=0&k=20&c=9i6QZwtV5ROp-zC3K686L9DFtNnbby4BCbkX7jSZKYQ=",
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                );
-                              }),
-                        )
+                            height: MediaQuery.of(context).size.height * 0.13,
+                            child: FutureBuilder<List<Sneakers>>(
+                                future: _female,
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return const CircularProgressIndicator();
+                                  } else if (snapshot.hasError) {
+                                    return Text("Error ${snapshot.error}");
+                                  } else {
+                                    final female = snapshot.data;
+                                    return ListView.builder(
+                                        itemCount: female!.length,
+                                        scrollDirection: Axis.horizontal,
+                                        itemBuilder: (context, index) {
+                                          final cream = snapshot.data![index];
+                                          return Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: NewCreams(
+                                              imageUrl: cream.imageUrl[1],
+                                            ),
+                                          );
+                                        });
+                                  }
+                                })),
                       ],
                     ),
+
+                     
+
                     Column(
                       children: [
                         Container(
                           height: MediaQuery.of(context).size.height * 0.405,
                           color: Colors.green,
+                          
                         )
                       ],
-                    )
+                    ),
+
+
                   ]),
                 ),
               )

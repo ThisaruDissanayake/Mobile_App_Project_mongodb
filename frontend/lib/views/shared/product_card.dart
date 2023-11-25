@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/views/shared/appstyle.dart';
+// ignore: unused_import
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class ProductCard extends StatefulWidget {
@@ -60,7 +61,7 @@ class _ProductCardState extends State<ProductCard> {
                       onTap: () {
                         // Handle onTap action
                       },
-                      child: Icon(MdiIcons.heart),
+                      child: const Icon(Icons.favorite_border),
                     ),
                   ),
                 ],
