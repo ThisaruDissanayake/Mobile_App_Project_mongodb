@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/models/sneaker_models.dart';
 import 'package:frontend/services/helper.dart';
-import 'package:frontend/views/shared/FemaleAll.dart';
+import 'package:frontend/views/shared/female_all.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 import 'package:frontend/views/shared/category_btn.dart';
 import 'package:frontend/views/shared/customer_spacer.dart';
@@ -241,7 +241,7 @@ class _ProductByCartState extends State<ProductByCart>
                                   brand[index],
                                   height: 60,
                                   width: 40,
-                                  color: Colors.black,
+                                  
                                 ),
                               ),
                             );
