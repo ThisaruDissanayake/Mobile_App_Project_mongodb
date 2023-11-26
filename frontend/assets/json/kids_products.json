@@ -43,6 +43,51 @@
         "price": "800.00",
         "description": "Discover Pinterests best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
         "brand": "Sanoda"
+    },
+
+    {
+        "id": "2",
+        "name": "Baby Magic Baby Lotion Gentle",
+        "category": "Baby",
+        "imageUrl": [
+
+            "https://i.pinimg.com/originals/eb/72/98/eb7298470bf31361eb71faa1ddc4b02d.jpg",
+            "https://i.pinimg.com/originals/eb/72/98/eb7298470bf31361eb71faa1ddc4b02d.jpg"
+        ],
+        "sizes":[
+            {"size": "100ml","isSelected":false},
+            {"size": "200ml","isSelected":false},
+            {"size": "300ml","isSelected":false},
+            {"size": "500ml","isSelected":false},
+            {"size": "1000ml","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinterests best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
+    },
+    {
+        "id": "2",
+        "name": "Baby Magic Baby Lotion Gentle",
+        "category": "Baby",
+        "imageUrl": [
+
+            "https://i.pinimg.com/originals/eb/72/98/eb7298470bf31361eb71faa1ddc4b02d.jpg",
+            "https://i.pinimg.com/originals/eb/72/98/eb7298470bf31361eb71faa1ddc4b02d.jpg"
+        ],
+        "sizes":[
+            {"size": "100ml","isSelected":false},
+            {"size": "200ml","isSelected":false},
+            {"size": "300ml","isSelected":false},
+            {"size": "500ml","isSelected":false},
+            {"size": "1000ml","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinterests best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
     }
 
     
