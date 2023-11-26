@@ -59,4 +59,8 @@ flutter:
   assets:
     - assets/images/top.png
     - assets/images/t.jpg
+    - assets/images/brand1.png
+    - assets/images/jenat.jpg
+    - assets/images/brand2.png
+    - assets/images/nn.jpg
   uses-material-design: true

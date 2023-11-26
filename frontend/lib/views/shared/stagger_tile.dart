@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 
 class StaggerTile extends StatefulWidget {
- 
-  const StaggerTile({super.key, required this.imageUrl, required this.name, required this.price});
+  const StaggerTile({
+    super.key,
+    required this.imageUrl,
+    required this.name,
+    required this.price,
+  });
 
-final String imageUrl;
-final String name;
-final String price;
+  final String imageUrl;
+  final String name;
+  final String price;
+
   @override
   State<StaggerTile> createState() => _StaggerTileState();
-
-  static extent(int i, double d) {}
 }
 
 class _StaggerTileState extends State<StaggerTile> {
@@ -31,16 +34,20 @@ class _StaggerTileState extends State<StaggerTile> {
           children: [
             CachedNetworkImage(imageUrl: widget.imageUrl, fit: BoxFit.fill),
             Container(
-              padding: const EdgeInsets.only(top :12 ),
-              height: 75,
+              padding: const EdgeInsets.only(top: 12),
+              height: 110,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.name,
-                  style: appstyleWithHt(20, Colors.black, FontWeight.w700,1),),
-                  Text(widget.price,
-                  style: appstyle(20, Colors.black, FontWeight.w500),)
+                  Text(
+                    widget.name,
+                    style: appstyleWithHt(20, Colors.black, FontWeight.w700, 1),
+                  ),
+                  Text(
+                    widget.price,
+                    style: appstyle(20, Colors.black, FontWeight.w500),
+                  )
                 ],
               ),
             )
