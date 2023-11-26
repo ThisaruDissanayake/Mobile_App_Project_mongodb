@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xFFE2E2E2),
-        body: SizedBox(
+        body:   SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
