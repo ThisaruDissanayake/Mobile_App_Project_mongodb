@@ -3,12 +3,14 @@
 // ignore: unused_import
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/controllers/product_provider.dart';
 import 'package:frontend/models/sneaker_models.dart';
 import 'package:frontend/views/Ui/product_by_cart.dart';
 import 'package:frontend/views/Ui/product_page.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 import 'package:frontend/views/shared/new_creams.dart';
 import 'package:frontend/views/shared/product_card.dart';
+import 'package:provider/provider.dart';
 
 class HomeWidge extends StatelessWidget {
   const HomeWidge({
@@ -22,6 +24,8 @@ class HomeWidge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var productNotifier = Provider.of<ProductNotifier>(context);
+
     return Column(
       children: [
         SizedBox(
@@ -43,13 +47,15 @@ class HomeWidge extends StatelessWidget {
                           final cream = snapshot.data![index];
                           return GestureDetector(
                             onTap: () {
+                              productNotifier.branchers = cream.branch;
+                             
+
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                       ProductPage(
-                                        id: cream.id, 
-                                        category: cream.category)));
+                                      builder: (context) => ProductPage(
+                                          id: cream.id,
+                                          category: cream.category)));
                             },
                             child: ProductCard(
                               price: "LKR ${cream.price}",

@@ -10,7 +10,7 @@ class Sneakers {
     final String name;
     final String category;
     final List<String> imageUrl;
-    final List<dynamic> sizes;
+    final List<dynamic> branch;
     final String oldPrice;
     final String price;
     final String description;
@@ -21,7 +21,7 @@ class Sneakers {
         required this.name,
         required this.category,
         required this.imageUrl,
-        required this.sizes,
+        required this.branch,
         required this.oldPrice,
         required this.price,
         required this.description,
@@ -33,7 +33,7 @@ class Sneakers {
         name: json["name"],
         category: json["category"],
         imageUrl: List<String>.from(json["imageUrl"].map((x) => x)),
-        sizes: List<dynamic>.from(json["sizes"].map((x) => x)),
+        branch: List<dynamic>.from(json["branch"].map((x) => x)),
         oldPrice: json["oldPrice"],
         price: json["price"],
         description: json["description"],

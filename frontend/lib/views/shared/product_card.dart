@@ -26,7 +26,6 @@ class _ProductCardState extends State<ProductCard> {
   bool selected = true;
   @override
   Widget build(BuildContext context) {
-    
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 20, 0),
       child: ClipRRect(
@@ -103,10 +102,15 @@ class _ProductCardState extends State<ProductCard> {
                           const SizedBox(
                             width: 3,
                           ),
-                          ChoiceChip(label: const Text(""), selected: selected,
-                          visualDensity: VisualDensity.compact ,
-                          selectedColor: Colors.black,
-                          
+                          ChoiceChip(
+                            label: const Text(""),
+                            selected: selected,
+                            visualDensity: VisualDensity.compact,
+                            selectedColor: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  50.0), // Adjust the radius as needed
+                            ),
                           )
                         ],
                       )

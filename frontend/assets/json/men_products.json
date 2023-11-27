@@ -2,18 +2,18 @@
     { 
         "id": "0",
         "name": "Neutrogena Hydro",
-        "category": " Face Moisturizer for mens",
+        "category": "Men's hair care product",
         "imageUrl": [
     
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
         ],
-        "sizes":[
-            {"size": "100ml","isSelected":false},
-            {"size": "200ml","isSelected":false},
-            {"size": "300ml","isSelected":false},
-            {"size": "500ml","isSelected":false},
-            {"size": "1000ml","isSelected":false}
+        "branch":[
+            {"branch": "An","isSelected":false},
+            {"branch": "Co","isSelected":false},
+            {"branch": "Ha","isSelected":false},
+            {"branch": "Ka","isSelected":false},
+            {"branch": "Jaf","isSelected":false}
     
         ],
         "oldPrice": "750.00",
@@ -25,17 +25,59 @@
     {
         "id": "1",
         "name": "Golden purl",
-        "category": "Men's skin care product ",
+        "category": "Men's skin care product",
         "imageUrl": [
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
         ],
-        "sizes":[
-            {"size": "100ml","isSelected":false},
-            {"size": "200ml","isSelected":false},
-            {"size": "300ml","isSelected":false},
-            {"size": "500ml","isSelected":false},
-            {"size": "1000ml","isSelected":false}
+        "branch":[
+            {"branch": "An","isSelected":false},
+            {"branch": "Co","isSelected":false},
+            {"branch": "Ha","isSelected":false},
+            {"branch": "Ka","isSelected":false},
+            {"branch": "Jaf","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinterests best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
+    },
+    {
+        "id": "1",
+        "name": "Golden purl222",
+        "category": "Men's skin care product",
+        "imageUrl": [
+            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+        ],
+        "branch":[
+            {"branch": "An","isSelected":false},
+            {"branch": "Co","isSelected":false},
+            {"branch": "Ha","isSelected":false},
+            {"branch": "Ka","isSelected":false},
+            {"branch": "Jaf","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinterests best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
+    },
+    {
+        "id": "1",
+        "name": "Golden purl333",
+        "category": "Men's makeup product",
+        "imageUrl": [
+            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+        ],
+        "branch":[
+            {"branch": "An","isSelected":false},
+            {"branch": "Co","isSelected":false},
+            {"branch": "Ha","isSelected":false},
+            {"branch": "Ka","isSelected":false},
+            {"branch": "Jaf","isSelected":false}
 
         ],
         "oldPrice": "650.00",
