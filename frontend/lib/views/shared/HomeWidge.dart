@@ -1,8 +1,11 @@
 // ignore_for_file: file_names
 
+// ignore: unused_import
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/models/sneaker_models.dart';
 import 'package:frontend/views/Ui/product_by_cart.dart';
+import 'package:frontend/views/Ui/product_page.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 import 'package:frontend/views/shared/new_creams.dart';
 import 'package:frontend/views/shared/product_card.dart';
@@ -10,7 +13,8 @@ import 'package:frontend/views/shared/product_card.dart';
 class HomeWidge extends StatelessWidget {
   const HomeWidge({
     super.key,
-    required Future<List<Sneakers>> female, required this.tabIndex,
+    required Future<List<Sneakers>> female,
+    required this.tabIndex,
   }) : _female = female;
 
   final Future<List<Sneakers>> _female;
@@ -37,12 +41,23 @@ class HomeWidge extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           final cream = snapshot.data![index];
-                          return ProductCard(
-                            price: "LKR ${cream.price}",
-                            category: cream.category,
-                            id: cream.id,
-                            name: cream.name,
-                            image: cream.imageUrl[0],
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                       ProductPage(
+                                        id: cream.id, 
+                                        category: cream.category)));
+                            },
+                            child: ProductCard(
+                              price: "LKR ${cream.price}",
+                              category: cream.category,
+                              id: cream.id,
+                              name: cream.name,
+                              image: cream.imageUrl[0],
+                            ),
                           );
                         });
                   }
@@ -68,8 +83,8 @@ class HomeWidge extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => ProductByCart(
-                                tabIndex: tabIndex,
-                              )));
+                                    tabIndex: tabIndex,
+                                  )));
                     },
                     child: Row(
                       children: [

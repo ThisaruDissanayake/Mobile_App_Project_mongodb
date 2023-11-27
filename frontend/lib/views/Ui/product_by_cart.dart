@@ -45,10 +45,10 @@ class _ProductByCartState extends State<ProductByCart>
   }
 
   List<String> brand = [
-    "assets/images/brand1.png",
-    "assets/images/jenat.jpg",
-    "assets/images/brand2.png",
-    "assets/images/nn.jpg",
+    "images/brand1.png",
+    "images/jenat.jpg",
+    "images/brand2.png",
+    "images/nn.jpg",
   ];
 
   @override
@@ -231,7 +231,7 @@ class _ProductByCartState extends State<ProductByCart>
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: const EdgeInsets.all(8),
+                              padding: const EdgeInsets.all(20),
                               child: Container(
                                 decoration: BoxDecoration(
                                     color: Colors.grey.shade200,

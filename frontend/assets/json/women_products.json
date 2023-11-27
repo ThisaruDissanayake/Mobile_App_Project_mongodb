@@ -2,7 +2,7 @@
     { 
         "id": "0",
         "name": "Acne Oil free wash",
-        "category": "women's face wash",
+        "category": "women's makeup product",
         "imageUrl": [
     
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
@@ -25,7 +25,7 @@
     {
         "id": "1",
         "name": "Bodi Lotion",
-        "category": "women's Body Lotion",
+        "category": "women's hair care product",
         "imageUrl": [
 
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
@@ -47,7 +47,7 @@
     {
         "id": "1",
         "name": "Bodi Lotion",
-        "category": "women's Body Lotion",
+        "category": "women's skin care product",
         "imageUrl": [
 
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
@@ -68,8 +68,8 @@
     },
     {
         "id": "1",
-        "name": "Bodi Lotion",
-        "category": "women's Body Lotion",
+        "name": "Body Lotion",
+        "category": "women's skin care product",
         "imageUrl": [
 
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
@@ -90,8 +90,8 @@
     },
     {
         "id": "1",
-        "name": "Bodi Lotion",
-        "category": "women's Body Lotion",
+        "name": "Lipstick",
+        "category": "women's makeup product",
         "imageUrl": [
 
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
@@ -112,8 +112,8 @@
     },
     {
         "id": "1",
-        "name": "Bodi Lotion",
-        "category": "women's Body Lotion",
+        "name": "Hair growth oil",
+        "category": "women's hair care product",
         "imageUrl": [
 
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
