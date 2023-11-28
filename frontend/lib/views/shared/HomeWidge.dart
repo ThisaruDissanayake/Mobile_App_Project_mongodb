@@ -12,6 +12,7 @@ import 'package:frontend/views/shared/new_creams.dart';
 import 'package:frontend/views/shared/product_card.dart';
 import 'package:provider/provider.dart';
 
+
 class HomeWidge extends StatelessWidget {
   const HomeWidge({
     super.key,

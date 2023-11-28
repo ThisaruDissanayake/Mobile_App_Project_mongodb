@@ -45,10 +45,10 @@ class _ProductByCartState extends State<ProductByCart>
   }
 
   List<String> brand = [
-    "images/brand1.png",
-    "images/jenat.jpg",
-    "images/brand2.png",
-    "images/nn.jpg",
+    "assets/images/brand1.png",
+    "assets/images/jenat.jpg",
+    "assets/images/brand2.png",
+    "assets/images/nn.jpg",
   ];
 
   @override

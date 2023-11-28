@@ -5,7 +5,7 @@ class Helper {
 //Women
   Future<List<Sneakers>> getFemaleSneakers() async {
     final data = await the_bundle.rootBundle
-        .loadString("json/women_products.json");
+        .loadString("assets/json/women_products.json");
     final femaleList = sneakersFromJson(data);
 
     return femaleList;
@@ -15,7 +15,7 @@ class Helper {
 
   Future<List<Sneakers>> getMaleSneakers() async {
     final data =
-        await the_bundle.rootBundle.loadString("json/men_products.json");
+        await the_bundle.rootBundle.loadString("assets/json/men_products.json");
     final maleList = sneakersFromJson(data);
 
     return maleList;
@@ -24,7 +24,7 @@ class Helper {
 //Kids
   Future<List<Sneakers>> getKidSneakers() async {
     final data = await the_bundle.rootBundle
-        .loadString("json/kids_products.json");
+        .loadString("assets/json/kids_products.json");
     final kidsList = sneakersFromJson(data);
 
     return kidsList;
@@ -33,7 +33,7 @@ class Helper {
 //single Women
   Future<Sneakers> getFemaleSneakersById(String id) async {
     final data = await the_bundle.rootBundle
-        .loadString("json/women_products.json");
+        .loadString("assets/json/women_products.json");
     final femaleList = sneakersFromJson(data);
 
     final sneaker = femaleList.firstWhere((sneaker) => sneaker.id == id);
@@ -44,7 +44,7 @@ class Helper {
 //single Men
   Future<Sneakers> getMaleSneakersById(String id) async {
     final data = await the_bundle.rootBundle
-        .loadString("json/men_products.json");
+        .loadString("assets/json/men_products.json");
     final maleList = sneakersFromJson(data);
 
     final sneaker = maleList.firstWhere((sneaker) => sneaker.id == id);
@@ -55,7 +55,7 @@ class Helper {
 //single kid
   Future<Sneakers> getKidSneakersById(String id) async {
     final data = await the_bundle.rootBundle
-        .loadString("json/kids_products.json");
+        .loadString("assets/json/kids_products.json");
     final kidsList = sneakersFromJson(data);
 
     final sneaker = kidsList.firstWhere((sneaker) => sneaker.id == id);

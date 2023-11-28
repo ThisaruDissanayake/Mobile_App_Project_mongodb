@@ -1,0 +1,4 @@
+#Tue Nov 28 18:10:31 IST 2023
+base.0=D\:\\5 Semester\\Mobile_App_Project\\frontend\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

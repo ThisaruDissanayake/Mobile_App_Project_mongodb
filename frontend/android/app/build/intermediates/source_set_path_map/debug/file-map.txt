@@ -1,0 +1,14 @@
+com.example.frontend.app-jetified-annotation-experimental-1.1.0-0 C:\Users\asd\.gradle\caches\transforms-3\5c2c29bf6eb57e090383b9e34f9e866b\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.frontend.app-jetified-window-java-1.0.0-beta04-1 C:\Users\asd\.gradle\caches\transforms-3\6f6c77f4745589cf4e7d129db0798e37\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.frontend.app-core-1.6.0-2 C:\Users\asd\.gradle\caches\transforms-3\941efaca3624bf9804f31ccb045d63d0\transformed\core-1.6.0\res
+com.example.frontend.app-jetified-window-1.0.0-beta04-3 C:\Users\asd\.gradle\caches\transforms-3\9c9e06ac3d60d76a3e94826d93a997a1\transformed\jetified-window-1.0.0-beta04\res
+com.example.frontend.app-packaged_res-4 C:\Users\asd\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.1\android\build\intermediates\packaged_res\debug
+com.example.frontend.app-packaged_res-5 C:\Users\asd\AppData\Local\Pub\Cache\hosted\pub.dev\sqflite-2.3.0\android\build\intermediates\packaged_res\debug
+com.example.frontend.app-pngs-6 D:\5 Semester\Mobile_App_Project\frontend\android\app\build\generated\res\pngs\debug
+com.example.frontend.app-resValues-7 D:\5 Semester\Mobile_App_Project\frontend\android\app\build\generated\res\resValues\debug
+com.example.frontend.app-rs-8 D:\5 Semester\Mobile_App_Project\frontend\android\app\build\generated\res\rs\debug
+com.example.frontend.app-mergeDebugResources-9 D:\5 Semester\Mobile_App_Project\frontend\android\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.frontend.app-mergeDebugResources-10 D:\5 Semester\Mobile_App_Project\frontend\android\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.frontend.app-merged_res-11 D:\5 Semester\Mobile_App_Project\frontend\android\app\build\intermediates\merged_res\debug
+com.example.frontend.app-debug-12 D:\5 Semester\Mobile_App_Project\frontend\android\app\src\debug\res
+com.example.frontend.app-main-13 D:\5 Semester\Mobile_App_Project\frontend\android\app\src\main\res

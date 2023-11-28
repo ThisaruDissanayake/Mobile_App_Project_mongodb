@@ -356,16 +356,22 @@ class _ProductPageState extends State<ProductPage> {
                                                                         'branch'],
                                                                     style: appstyle(
                                                                         18,
-                                                                        branch['isSelected']? Colors.white:Colors.black,
+                                                                        branch['isSelected']
+                                                                            ? Colors
+                                                                                .white
+                                                                            : Colors
+                                                                                .black,
                                                                         FontWeight
                                                                             .w500),
                                                                   ),
-                                                                  selectedColor: Colors.black,
-                                                                  padding: const EdgeInsets.symmetric(
-                                                                    vertical: 8
-                                                                  ),
-                                                                  selected: branch
-                                                                      [
+                                                                  selectedColor:
+                                                                      Colors
+                                                                          .black,
+                                                                  padding: const EdgeInsets
+                                                                      .symmetric(
+                                                                      vertical:
+                                                                          8),
+                                                                  selected: branch[
                                                                       'isSelected'],
                                                                   onSelected:
                                                                       (newState) {
