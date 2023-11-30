@@ -4,6 +4,8 @@ import 'package:frontend/controllers/product_provider.dart';
 import 'package:frontend/models/sneaker_models.dart';
 import 'package:frontend/services/helper.dart';
 import 'package:frontend/views/shared/appstyle.dart';
+import 'package:frontend/views/shared/cheakout_btn.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -19,6 +21,7 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
   final PageController pageController = PageController();
+  final _cartBox = Hive.box('cart_box');
 
   late Future<Sneakers> _sneaker;
 
@@ -34,6 +37,10 @@ class _ProductPageState extends State<ProductPage> {
     } else {
       _sneaker = Helper().getKidSneakersById(widget.id);
     }
+  }
+
+  Future<void> _createCart(Map<String, dynamic> newCart) async {
+    await _cartBox.add(newCart);
   }
 
   @override
@@ -284,7 +291,7 @@ class _ProductPageState extends State<ProductPage> {
                                                   ],
                                                 ),
                                                 const SizedBox(
-                                                  height: 20,
+                                                  height: 15,
                                                 ),
                                                 Column(
                                                   children: [
@@ -298,10 +305,10 @@ class _ProductPageState extends State<ProductPage> {
                                                               FontWeight.w600),
                                                         ),
                                                         const SizedBox(
-                                                          width: 20,
+                                                          width: 15,
                                                         ),
                                                         Text(
-                                                          "Branch Named First 2 Letters",
+                                                          "Nearset Branchers",
                                                           style: appstyle(
                                                               10,
                                                               Colors.grey,
@@ -310,7 +317,7 @@ class _ProductPageState extends State<ProductPage> {
                                                       ],
                                                     ),
                                                     const SizedBox(
-                                                      height: 10,
+                                                      height: 5,
                                                     ),
                                                     SizedBox(
                                                       height: 40,
@@ -375,6 +382,21 @@ class _ProductPageState extends State<ProductPage> {
                                                                       'isSelected'],
                                                                   onSelected:
                                                                       (newState) {
+                                                                    if (productNotifier
+                                                                        .branch
+                                                                        .contains(
+                                                                            branch["branch"])) {
+                                                                      productNotifier
+                                                                          .branch
+                                                                          .remove(
+                                                                              branch['branch']);
+                                                                    } else {
+                                                                      productNotifier
+                                                                          .branch
+                                                                          .add(branch[
+                                                                              'branch']);
+                                                                    }
+
                                                                     productNotifier
                                                                         .toggleCheck(
                                                                             index);
@@ -383,6 +405,74 @@ class _ProductPageState extends State<ProductPage> {
                                                           }),
                                                     )
                                                   ],
+                                                ),
+                                                const SizedBox(
+                                                  height: 10,
+                                                ),
+                                                const Divider(
+                                                  indent: 10,
+                                                  endIndent: 10,
+                                                  color: Colors.black,
+                                                ),
+                                                SizedBox(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.8,
+                                                  child: Text(
+                                                    sneaker.brand,
+                                                    style: appstyle(
+                                                        20,
+                                                        Colors.black,
+                                                        FontWeight.w700),
+                                                  ),
+                                                ),
+                                                const SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Text(
+                                                  sneaker.description,
+                                                  textAlign: TextAlign.justify,
+                                                  maxLines: 20,
+                                                  style: appstyle(
+                                                      14,
+                                                      Colors.black,
+                                                      FontWeight.normal),
+                                                ),
+                                                const SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      Alignment.bottomCenter,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 12),
+                                                    child: CheackoutButton(
+                                                      onTap: () async {
+                                                        _createCart({
+                                                          "id": sneaker.id,
+                                                          "name": sneaker.name,
+                                                          "category":
+                                                              sneaker.category,
+                                                          "brancher":
+                                                              productNotifier
+                                                                  .branch,
+                                                          "imageUrl": sneaker
+                                                              .imageUrl[0],
+                                                          "price":
+                                                              sneaker.price,
+                                                          "qty": 1
+                                                        });
+
+                                                        productNotifier.branch
+                                                            .clear();
+                                                        Navigator.pop(context);
+                                                      },
+                                                      label: ' Add to Bag ',
+                                                    ),
+                                                  ),
                                                 )
                                               ],
                                             ),

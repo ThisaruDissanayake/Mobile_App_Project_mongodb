@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class ProductNotifier extends ChangeNotifier {
   int _activepage = 0;
   List<dynamic> _branchers = [];
+  List<String> _branche = [];
+
   int get activepage => _activepage;
 
   set activePage(int newIndex) {
@@ -22,5 +24,13 @@ class ProductNotifier extends ChangeNotifier {
         _branchers[i]['isSelected'] = !_branchers[i]['isSelected'];
       }
     }
+    notifyListeners();
+  }
+
+  List<String> get branch => _branche;
+
+  set branch(List<String> newBranch) {
+    _branche = newBranch;
+    notifyListeners();
   }
 }
