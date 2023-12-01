@@ -1,9 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/models/constants.dart';
 import 'package:frontend/controllers/product_provider.dart';
+import 'package:frontend/controllers/favorites_notifier.dart';
 import 'package:frontend/models/sneaker_models.dart';
 import 'package:frontend/services/helper.dart';
 import 'package:frontend/views/shared/appstyle.dart';
+import 'package:frontend/views/Ui/favorites.dart';
+import 'package:frontend/views/Ui/homepage.dart';
 import 'package:frontend/views/shared/cheakout_btn.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +26,7 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   final PageController pageController = PageController();
   final _cartBox = Hive.box('cart_box');
+  final _favBox = Hive.box('fav_box');
 
   late Future<Sneakers> _sneaker;
 
@@ -41,6 +46,26 @@ class _ProductPageState extends State<ProductPage> {
 
   Future<void> _createCart(Map<String, dynamic> newCart) async {
     await _cartBox.add(newCart);
+  }
+
+  Future<void> _createFav(Map<String, dynamic> addFav) async {
+    await _favBox.add(addFav);
+    getFavorites();
+  }
+
+  getFavorites() {
+    final favData = _favBox.keys.map((key) {
+      final item = _favBox.get(key);
+
+      return {
+        "key": key,
+        "id": item["id"],
+      };
+    }).toList();
+
+    favor = favData.toList();
+    ids = favor.map((item) => item['id']).toList();
+    setState(() {});
   }
 
   @override
@@ -78,7 +103,12 @@ class _ProductPageState extends State<ProductPage> {
                                 children: [
                                   GestureDetector(
                                     onTap: () {
-                                      Navigator.pop(context);
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const HomePage()), // Corrected here
+                                      );
                                       productNotifier.branchers.clear();
                                     },
                                     child: const Icon(
@@ -130,7 +160,7 @@ class _ProductPageState extends State<ProductPage> {
                                               child: CachedNetworkImage(
                                                 imageUrl:
                                                     sneaker.imageUrl[index],
-                                                fit: BoxFit.contain,
+                                                
                                               ),
                                             ),
                                             Positioned(
@@ -138,10 +168,40 @@ class _ProductPageState extends State<ProductPage> {
                                                         .size
                                                         .height *
                                                     0.1,
-                                                right: 20,
-                                                child: const Icon(
-                                                  Icons.favorite_border,
-                                                  color: Colors.grey,
+                                                right: 10,
+                                                child:
+                                                    Consumer<FavoritesNotifier>(
+                                                  builder: (context,
+                                                      favoritesNotifier,
+                                                      child) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        if (ids.contains(
+                                                            widget.id)) {
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                  builder:
+                                                                      (context) =>
+                                                                         const Favorites()));
+                                                        } else {
+                                                          _createFav({
+                                                            "id": sneaker.id,
+                                                            "name": sneaker.name,
+                                                            "category": sneaker.category,
+                                                            "price": sneaker.price,
+                                                            "imageUrl": sneaker.imageUrl[0],
+                                                          });
+                                                        }
+                                                      },
+                                                      child: ids.contains(
+                                                              sneaker.id)
+                                                          ? const Icon(
+                                                              Icons.favorite)
+                                                          : const Icon(Icons
+                                                              .favorite_border),
+                                                    );
+                                                  },
                                                 )),
                                             Positioned(
                                                 bottom: 0,
@@ -396,6 +456,8 @@ class _ProductPageState extends State<ProductPage> {
                                                                           .add(branch[
                                                                               'branch']);
                                                                     }
+                                                                    // print(productNotifier
+                                                                    //     .branch);
 
                                                                     productNotifier
                                                                         .toggleCheck(
@@ -456,7 +518,7 @@ class _ProductPageState extends State<ProductPage> {
                                                           "name": sneaker.name,
                                                           "category":
                                                               sneaker.category,
-                                                          "brancher":
+                                                          "branch":
                                                               productNotifier
                                                                   .branch,
                                                           "imageUrl": sneaker

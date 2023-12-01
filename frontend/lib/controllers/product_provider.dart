@@ -29,8 +29,8 @@ class ProductNotifier extends ChangeNotifier {
 
   List<String> get branch => _branche;
 
-  set branch(List<String> newBranch) {
-    _branche = newBranch;
+  set branch(List<String> newBranch1) {
+    _branche = newBranch1;
     notifyListeners();
   }
 }

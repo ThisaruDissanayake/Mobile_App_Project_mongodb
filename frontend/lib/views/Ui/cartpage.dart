@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 
-class CartPage extends StatefulWidget {
-  const CartPage({super.key});
+class CartPage1 extends StatefulWidget {
+  const CartPage1({super.key});
 
   @override
-  State<CartPage> createState() => _CartPageState();
+  State<CartPage1> createState() => _CartPageState();
 }
 
-class _CartPageState extends State<CartPage> {
+class _CartPageState extends State<CartPage1> {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
