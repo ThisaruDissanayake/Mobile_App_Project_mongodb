@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/models/constants.dart';
+// import 'package:frontend/models/constants.dart';
 import 'package:frontend/views/Ui/favorites.dart';
 import 'package:frontend/views/shared/appstyle.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+// import 'package:hive_flutter/hive_flutter.dart';
+import 'package:frontend/controllers/favorites_notifier.dart';
 // ignore: unused_import
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:provider/provider.dart';
 
 class ProductCard extends StatefulWidget {
   const ProductCard(
@@ -26,33 +28,36 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
-  final _favBox = Hive.box("fav_box");
+  // final _favBox = Hive.box("fav_box");
 
-  Future<void> _createFav(Map<String, dynamic> addFav) async {
-    await _favBox.add(addFav);
-    getFavorites();
-  }
+  // Future<void> _createFav(Map<String, dynamic> addFav) async {
+  //   await _favBox.add(addFav);
+  //   getFavorites();
+  // }
 
-  getFavorites() {
-    final favData = _favBox.keys.map((key) {
-      final item = _favBox.get(key);
+  // getFavorites() {
+  //   final favData = _favBox.keys.map((key) {
+  //     final item = _favBox.get(key);
 
-      return {
-        "key": key,
-        "id": item["id"],
-      };
-    }).toList();
+  //     return {
+  //       "key": key,
+  //       "id": item["id"],
+  //     };
+  //   }).toList();
 
-    favor = favData.toList();
-    ids = favor.map((item) => item['id']).toList();
-    setState(() {
-      
-    });
-  }
+  //   favor = favData.toList();
+  //   ids = favor.map((item) => item['id']).toList();
+  //   setState(() {
 
-  bool selected = true;
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
+    var favoritesNotifer =
+        Provider.of<FavoritesNotifier>(context, listen: true);
+    favoritesNotifer.getFavorites();
+    bool selected = true;
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 20, 0),
       child: ClipRRect(
@@ -77,7 +82,6 @@ class _ProductCardState extends State<ProductCard> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(widget.image),
-                        
                       ),
                     ),
                   ),
@@ -86,13 +90,13 @@ class _ProductCardState extends State<ProductCard> {
                     top: 10,
                     child: GestureDetector(
                       onTap: () async {
-                        if (ids.contains(widget.id)) {
+                        if (favoritesNotifer.ids.contains(widget.id)) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const Favorites()));
                         } else {
-                          _createFav({
+                          favoritesNotifer.createFav({
                             "id": widget.id,
                             "name": widget.name,
                             "category": widget.category,
@@ -100,8 +104,13 @@ class _ProductCardState extends State<ProductCard> {
                             "imageUrl": widget.image,
                           });
                         }
+                        setState(() {
+                          
+                        });
+
+
                       },
-                      child: ids.contains(widget.id)
+                      child: favoritesNotifer.ids.contains(widget.id)
                           ? const Icon(Icons.favorite)
                           : const Icon(Icons.favorite_border),
                     ),

@@ -1,6 +1,8 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:frontend/controllers/cart_provider.dart';
+import 'package:frontend/controllers/favorites_notifier.dart';
 import 'package:frontend/controllers/mainscreen_provider.dart';
 import 'package:frontend/controllers/product_provider.dart';
 import 'package:frontend/views/Ui/mainscreen.dart';
@@ -17,6 +19,9 @@ void main() async {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => MainScreenNotifier()),
     ChangeNotifierProvider(create: (context) => ProductNotifier()),
+     ChangeNotifierProvider(create: (context) => FavoritesNotifier()),
+     ChangeNotifierProvider(create: (context) => CartProvider()),
+     
   ], child: const MyApp()));
 }
 

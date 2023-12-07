@@ -2,6 +2,7 @@
 // ignore_for_file: unused_field, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:frontend/controllers/product_provider.dart';
 import 'package:frontend/models/sneaker_models.dart';
 import 'package:frontend/services/helper.dart';
 import 'package:frontend/views/shared/HomeWidge.dart';
@@ -9,6 +10,7 @@ import 'package:frontend/views/shared/appstyle.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:frontend/views/shared/new_creams.dart';
 import 'package:frontend/views/shared/product_card.dart';
+import 'package:provider/provider.dart';
 //import 'package:flutter_antd_icons/flutter_antd_icons.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,36 +24,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late final TabController _tabController =
       TabController(length: 3, vsync: this);
 
-  late Future<List<Sneakers>> _male;
-  late Future<List<Sneakers>> _female;
-  late Future<List<Sneakers>> _kids;
-
-  void getMale() {
-    _male = Helper().getMaleSneakers();
-  }
-
-  void getFemale() {
-    _female = Helper().getFemaleSneakers();
-  }
-
-  void getKids() {
-    _kids = Helper().getKidSneakers();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getMale();
-    getFemale();
-    getKids();
-  }
-
   @override
   Widget build(BuildContext context) {
+    var productNotifier = Provider.of<ProductNotifier>(context);
+    productNotifier.getFemale();
+    productNotifier.getMale();
+    productNotifier.getKids();
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xFFE2E2E2),
-        body:   SizedBox(
+        body: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
@@ -110,12 +93,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 child: Container(
                   padding: const EdgeInsets.only(left: 12),
                   child: TabBarView(controller: _tabController, children: [
-                    HomeWidge(female: _female,
-                    tabIndex: 0,),
-                    HomeWidge(female: _male,
-                    tabIndex: 1,),
-                    HomeWidge(female: _kids,
-                    tabIndex: 2,),
+                    HomeWidge(
+                      female: productNotifier.female,
+                      tabIndex: 0,
+                    ),
+                    HomeWidge(
+                      female: productNotifier.male,
+                      tabIndex: 1,
+                    ),
+                    HomeWidge(
+                      female: productNotifier.kids,
+                      tabIndex: 2,
+                    ),
                   ]),
                 ),
               )

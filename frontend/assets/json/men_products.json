@@ -1,6 +1,6 @@
 [
     { 
-        "id": "0",
+        "id": "6",
         "name": "Neutrogena Hydro",
         "category": "Men's hair care product",
         "imageUrl": [
@@ -23,7 +23,7 @@
     },
 
     {
-        "id": "1",
+        "id": "7",
         "name": "Golden purl",
         "category": "Men's skin care product",
         "imageUrl": [
@@ -44,7 +44,7 @@
         "brand": "Sanoda"
     },
     {
-        "id": "1",
+        "id": "8",
         "name": "Golden purl222",
         "category": "Men's skin care product",
         "imageUrl": [
@@ -65,7 +65,7 @@
         "brand": "Sanoda"
     },
     {
-        "id": "1",
+        "id": "9",
         "name": "Golden purl333",
         "category": "Men's makeup product",
         "imageUrl": [

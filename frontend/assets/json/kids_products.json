@@ -1,7 +1,7 @@
 [
     { 
         "id": "0",
-        "name": "Tubby Todd Bath Co Dream",
+        "name": "Tubby Todd Bath ",
         "category": "kid's skin care product",
         "imageUrl": [
     
@@ -24,7 +24,7 @@
 
     {
         "id": "1",
-        "name": "Baby Magic Baby Lotion Gentle",
+        "name": "Baby Magic Lotion",
         "category": "kid's hair care product",
         "imageUrl": [
             "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
@@ -46,7 +46,7 @@
 
     {
         "id": "2",
-        "name": "Baby Magic Baby Lotion Gentle",
+        "name": "Baby Magic Lotion ",
         "category": "kid's hair care product",
         "imageUrl": [
 
@@ -67,8 +67,8 @@
         "brand": "Sanoda"
     },
     {
-        "id": "2",
-        "name": "Baby Magic Baby Lotion Gentle",
+        "id": "3",
+        "name": "Baby Magic Lotion",
         "category": "kid's skin care product",
         "imageUrl": [
 

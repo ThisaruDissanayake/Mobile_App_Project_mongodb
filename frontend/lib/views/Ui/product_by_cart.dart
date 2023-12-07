@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/models/sneaker_models.dart';
-import 'package:frontend/services/helper.dart';
+import 'package:frontend/controllers/product_provider.dart';
+// import 'package:frontend/models/sneaker_models.dart';
+// import 'package:frontend/services/helper.dart';
 import 'package:frontend/views/shared/female_all.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 import 'package:frontend/views/shared/category_btn.dart';
 import 'package:frontend/views/shared/customer_spacer.dart';
+import 'package:provider/provider.dart';
 
 class ProductByCart extends StatefulWidget {
   const ProductByCart({super.key, required this.tabIndex});
 
-  final int tabIndex; 
+  final int tabIndex;
 
   @override
   State<ProductByCart> createState() => _ProductByCartState();
@@ -20,28 +22,9 @@ class _ProductByCartState extends State<ProductByCart>
   late final TabController _tabController =
       TabController(length: 3, vsync: this);
 
-  late Future<List<Sneakers>> _male;
-  late Future<List<Sneakers>> _female;
-  late Future<List<Sneakers>> _kids;
-
-  void getMale() {
-    _male = Helper().getMaleSneakers();
-  }
-
-  void getFemale() {
-    _female = Helper().getFemaleSneakers();
-  }
-
-  void getKids() {
-    _kids = Helper().getKidSneakers();
-  }
-
   @override
   void initState() {
     super.initState();
-    getMale();
-    getFemale();
-    getKids();
   }
 
   List<String> brand = [
@@ -53,6 +36,10 @@ class _ProductByCartState extends State<ProductByCart>
 
   @override
   Widget build(BuildContext context) {
+    var productNotifier = Provider.of<ProductNotifier>(context);
+    productNotifier.getFemale();
+    productNotifier.getKids();
+    productNotifier.getMale();
     return Scaffold(
       backgroundColor: const Color(0xFFE2E2E2),
       body: SizedBox(
@@ -121,9 +108,9 @@ class _ProductByCartState extends State<ProductByCart>
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
                 child: TabBarView(controller: _tabController, children: [
-                  FemaleAll(female: _female),
-                  FemaleAll(female: _male),
-                  FemaleAll(female: _kids),
+                  FemaleAll(female: productNotifier.female),
+                  FemaleAll(female: productNotifier.male),
+                  FemaleAll(female: productNotifier.kids),
                 ]),
               ),
             )
@@ -241,7 +228,6 @@ class _ProductByCartState extends State<ProductByCart>
                                   brand[index],
                                   height: 60,
                                   width: 40,
-                                  
                                 ),
                               ),
                             );

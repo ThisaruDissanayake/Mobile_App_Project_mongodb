@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:frontend/models/constants.dart';
 import 'package:frontend/controllers/product_provider.dart';
 import 'package:frontend/controllers/favorites_notifier.dart';
 import 'package:frontend/models/sneaker_models.dart';
-import 'package:frontend/services/helper.dart';
+// import 'package:frontend/services/helper.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 import 'package:frontend/views/Ui/favorites.dart';
 import 'package:frontend/views/Ui/homepage.dart';
@@ -26,60 +25,48 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   final PageController pageController = PageController();
   final _cartBox = Hive.box('cart_box');
-  final _favBox = Hive.box('fav_box');
-
-  late Future<Sneakers> _sneaker;
-
-  void getCreams() {
-    if (widget.category == "women's hair care product" ||
-        widget.category == "women's skin care product" ||
-        widget.category == "women's makeup product") {
-      _sneaker = Helper().getFemaleSneakersById(widget.id);
-    } else if (widget.category == "Men's hair care product" ||
-        widget.category == "Men's skin care product" ||
-        widget.category == "Men's makeup product") {
-      _sneaker = Helper().getMaleSneakersById(widget.id);
-    } else {
-      _sneaker = Helper().getKidSneakersById(widget.id);
-    }
-  }
+  // final _favBox = Hive.box('fav_box');
 
   Future<void> _createCart(Map<String, dynamic> newCart) async {
     await _cartBox.add(newCart);
   }
 
-  Future<void> _createFav(Map<String, dynamic> addFav) async {
-    await _favBox.add(addFav);
-    getFavorites();
-  }
+  // Future<void> _createFav(Map<String, dynamic> addFav) async {
+  //   await _favBox.add(addFav);
+  // }
 
-  getFavorites() {
-    final favData = _favBox.keys.map((key) {
-      final item = _favBox.get(key);
+  // getFavorites() {
+  //   final favData = _favBox.keys.map((key) {
+  //     final item = _favBox.get(key);
 
-      return {
-        "key": key,
-        "id": item["id"],
-      };
-    }).toList();
+  //     return {
+  //       "key": key,
+  //       "id": item["id"],
+  //     };
+  //   }).toList();
 
-    favor = favData.toList();
-    ids = favor.map((item) => item['id']).toList();
-    setState(() {});
-  }
+  //   favor = favData.toList();
+  //   ids = favor.map((item) => item['id']).toList();
+  //   setState(() {});
+  // }
 
-  @override
-  void initState() {
-    super.initState();
-    getCreams();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   getCreams();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    var productNotifier = Provider.of<ProductNotifier>(context);
+    productNotifier.getCreams(widget.category, widget.id);
+    var favoritesNotifer =
+        Provider.of<FavoritesNotifier>(context, listen: true);
+    favoritesNotifer.getFavorites();
     return MaterialApp(
       home: Scaffold(
           body: FutureBuilder<Sneakers>(
-              future: _sneaker,
+              future: productNotifier.sneaker,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const CircularProgressIndicator();
@@ -160,49 +147,52 @@ class _ProductPageState extends State<ProductPage> {
                                               child: CachedNetworkImage(
                                                 imageUrl:
                                                     sneaker.imageUrl[index],
-                                                
+                                                fit: BoxFit.contain,
                                               ),
                                             ),
                                             Positioned(
-                                                top: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    0.1,
-                                                right: 10,
+                                                right: 20,
+                                                top: 100,
                                                 child:
                                                     Consumer<FavoritesNotifier>(
-                                                  builder: (context,
-                                                      favoritesNotifier,
-                                                      child) {
-                                                    return GestureDetector(
-                                                      onTap: () {
-                                                        if (ids.contains(
-                                                            widget.id)) {
-                                                          Navigator.push(
-                                                              context,
-                                                              MaterialPageRoute(
-                                                                  builder:
-                                                                      (context) =>
-                                                                         const Favorites()));
-                                                        } else {
-                                                          _createFav({
-                                                            "id": sneaker.id,
-                                                            "name": sneaker.name,
-                                                            "category": sneaker.category,
-                                                            "price": sneaker.price,
-                                                            "imageUrl": sneaker.imageUrl[0],
-                                                          });
-                                                        }
-                                                      },
-                                                      child: ids.contains(
-                                                              sneaker.id)
-                                                          ? const Icon(
-                                                              Icons.favorite)
-                                                          : const Icon(Icons
-                                                              .favorite_border),
-                                                    );
-                                                  },
-                                                )),
+                                                        builder: (context,
+                                                            favoritesNotifier,
+                                                            child) {
+                                                  return GestureDetector(
+                                                    onTap: () async {
+                                                      if (favoritesNotifier.ids
+                                                          .contains(
+                                                              widget.id)) {
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        const Favorites()));
+                                                      } else {
+                                                        favoritesNotifer
+                                                            .createFav({
+                                                          "id": sneaker.id,
+                                                          "name": sneaker.name,
+                                                          "category":
+                                                              sneaker.category,
+                                                          "price":
+                                                              sneaker.price,
+                                                          "imageUrl": sneaker
+                                                              .imageUrl[0],
+                                                        });
+                                                      }
+                                                      setState(() {});
+                                                    },
+                                                    child: favoritesNotifier.ids
+                                                            .contains(
+                                                                sneaker.id)
+                                                        ? const Icon(
+                                                            Icons.favorite)
+                                                        : const Icon(Icons
+                                                            .favorite_border),
+                                                  );
+                                                })),
                                             Positioned(
                                                 bottom: 0,
                                                 right: 0,
@@ -530,7 +520,12 @@ class _ProductPageState extends State<ProductPage> {
 
                                                         productNotifier.branch
                                                             .clear();
-                                                        Navigator.pop(context);
+                                                        Navigator.pushReplacement(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        const HomePage()));
                                                       },
                                                       label: ' Add to Bag ',
                                                     ),

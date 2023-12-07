@@ -45,7 +45,7 @@
         "brand": "Sanoda"
     },
     {
-        "id": "1",
+        "id": "2",
         "name": "Bodi Lotion",
         "category": "women's skin care product",
         "imageUrl": [
@@ -67,7 +67,7 @@
         "brand": "Sanoda"
     },
     {
-        "id": "1",
+        "id": "3",
         "name": "Body Lotion",
         "category": "women's skin care product",
         "imageUrl": [
@@ -89,7 +89,7 @@
         "brand": "Sanoda"
     },
     {
-        "id": "1",
+        "id": "4",
         "name": "Lipstick",
         "category": "women's makeup product",
         "imageUrl": [
@@ -111,7 +111,7 @@
         "brand": "Sanoda"
     },
     {
-        "id": "1",
+        "id": "5",
         "name": "Hair growth oil",
         "category": "women's hair care product",
         "imageUrl": [
