@@ -78,7 +78,7 @@ class _FavoritesState extends State<Favorites> {
                               Padding(
                                 padding: const EdgeInsets.all(12),
                                 child: CachedNetworkImage(
-                                  imageUrl: cream['imageUrl'][0],
+                                  imageUrl: cream['imageUrl'],
                                   width: 70,
                                   height: 70,
                                   fit: BoxFit.fill,

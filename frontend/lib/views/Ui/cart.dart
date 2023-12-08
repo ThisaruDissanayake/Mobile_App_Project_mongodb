@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/controllers/cart_provider.dart';
+import 'package:frontend/views/Ui/homepage.dart';
 import 'package:frontend/views/Ui/mainscreen.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 // import 'package:flutter_slidable/flutter_slidable.dart';
@@ -33,7 +34,9 @@ class _CartPageState extends State<CartPage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context ,MaterialPageRoute(
+                                            builder: (context) =>
+                                                const HomePage()),);
                   },
                   child: const Icon(
                     Icons.close,
