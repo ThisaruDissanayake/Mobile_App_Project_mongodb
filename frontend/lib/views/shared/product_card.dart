@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:frontend/models/constants.dart';
 import 'package:frontend/views/Ui/favorites.dart';
+// import 'package:frontend/models/constants.dart';
+// import 'package:frontend/views/Ui/favorites.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 import 'package:frontend/controllers/favorites_notifier.dart';
@@ -127,7 +128,7 @@ class _ProductCardState extends State<ProductCard> {
                     Text(
                        widget.name,
                       style: appstyleWithHt(
-                          36, Colors.black, FontWeight.bold, 1.1),
+                          30, Colors.black, FontWeight.bold, 1.1),
                     ),
                     reusableText(
                       text: widget.category,

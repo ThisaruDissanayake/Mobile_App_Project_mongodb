@@ -27,17 +27,20 @@ class _FavoritesState extends State<Favorites> {
 
     return Scaffold(
         body: SizedBox(
+      
       height: 812.h,
       width: 378.w,
       child: Stack(children: [
         Container(
           padding:  EdgeInsets.fromLTRB(16.w, 45.h, 0, 0),
+          
           height: 325.h,
           width:378.w,
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/t.jpg"), fit: BoxFit.fill)),
           child: Padding(
+            
             padding:  EdgeInsets.all(8.h),
             child: Text(
               "My Favorutes",

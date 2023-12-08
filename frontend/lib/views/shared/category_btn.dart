@@ -14,7 +14,7 @@ class CategoryBtn extends StatelessWidget {
       onPressed: onPress,
       child: Container(
         height: 45,
-        width: MediaQuery.of(context).size.width * 0.255,
+        width: MediaQuery.of(context).size.width * 0.25,
         decoration: BoxDecoration(
             border: Border.all(
               width: 1,

@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color(0xFFE2E2E2),
+        backgroundColor: const Color.fromARGB(255, 249, 223, 237),
         body: SizedBox(
           height: 820.h,
           width: 378.w,
@@ -58,12 +58,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       reusableText(
                         text : "Skin Care Products",
                         style: appstyleWithHt(
-                            36, Colors.white, FontWeight.bold, 1.5),
+                            36, const Color.fromARGB(255, 188, 3, 142), FontWeight.bold, 1.5),
                       ),
                       reusableText(
                         text : "Collection",
                         style: appstyleWithHt(
-                            38, Colors.white, FontWeight.bold, 1.2),
+                            38, const Color.fromARGB(255, 188, 3, 142), FontWeight.bold, 1.2),
                       ),
                       TabBar(
                           padding: EdgeInsets.zero,

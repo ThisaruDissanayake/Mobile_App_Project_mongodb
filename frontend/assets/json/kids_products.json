@@ -1,12 +1,12 @@
 [
     { 
-        "id": "0",
-        "name": "Tubby Todd Bath ",
+        "id": "10",
+        "name": "Iconic Skin  ",
         "category": "kid's skin care product",
         "imageUrl": [
     
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://www.agoratopia.com/wp-content/uploads/2020/11/baby-kids-face-cream-02-1.jpg",
+            "https://www.agoratopia.com/wp-content/uploads/2020/11/baby-kids-face-cream-02-1.jpg"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -23,12 +23,12 @@
     },
 
     {
-        "id": "1",
+        "id": "11",
         "name": "Baby Magic Lotion",
         "category": "kid's hair care product",
         "imageUrl": [
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://www.claires.com/dw/image/v2/BBTK_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb3bf9917/images/hi-res/02913_1.jpg?sw=734&sh=734&sm=fit",
+            "https://www.claires.com/dw/image/v2/BBTK_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb3bf9917/images/hi-res/02913_1.jpg?sw=734&sh=734&sm=fit"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -45,13 +45,13 @@
     },
 
     {
-        "id": "2",
-        "name": "Baby Magic Lotion ",
+        "id": "12",
+        "name": "Pigmented",
         "category": "kid's hair care product",
         "imageUrl": [
 
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://th.bing.com/th/id/OIP.WRWd9miYx8amAUSPS4f44wHaHa?w=900&h=900&rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.WRWd9miYx8amAUSPS4f44wHaHa?w=900&h=900&rs=1&pid=ImgDetMain"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -67,13 +67,35 @@
         "brand": "Sanoda"
     },
     {
-        "id": "3",
-        "name": "Baby Magic Lotion",
+        "id": "13",
+        "name": "The Smeared",
         "category": "kid's skin care product",
         "imageUrl": [
 
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://th.bing.com/th/id/OIP.8sSQ-bK9iuR7fG52JoWa4gHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.8sSQ-bK9iuR7fG52JoWa4gHaHa?w=500&h=500&rs=1&pid=ImgDetMain"
+        ],
+        "branch":[
+            {"branch": "Anuradhapura","isSelected":false},
+            {"branch": "Colombo","isSelected":false},
+            {"branch": "Hamabanthota","isSelected":false},
+            {"branch": "Kandy","isSelected":false},
+            {"branch": "Jaffna","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinterests best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
+    },
+    {
+        "id": "14",
+        "name": "Romance Fantasie",
+        "category": "kid's skin care product",
+        "imageUrl": [
+
+            "https://th.bing.com/th/id/OIP.2xOYHvgmgiPkUSqPl6BcQQAAAA?rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.2xOYHvgmgiPkUSqPl6BcQQAAAA?rs=1&pid=ImgDetMain"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},

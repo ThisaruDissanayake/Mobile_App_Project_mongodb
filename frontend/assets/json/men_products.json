@@ -5,8 +5,8 @@
         "category": "Men's hair care product",
         "imageUrl": [
     
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://www.z-pharm.gr/files/products/396c13ce3ec9f6a4ef7bcbd44ae7cf0d.jpg",
+            "https://www.z-pharm.gr/files/products/396c13ce3ec9f6a4ef7bcbd44ae7cf0d.jpg"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -27,8 +27,8 @@
         "name": "Golden purl",
         "category": "Men's skin care product",
         "imageUrl": [
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://th.bing.com/th/id/OIP.CzT01kaHZJ_6S9BWnYwa4QHaHa?w=700&h=700&rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.CzT01kaHZJ_6S9BWnYwa4QHaHa?w=700&h=700&rs=1&pid=ImgDetMain"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -45,11 +45,11 @@
     },
     {
         "id": "8",
-        "name": "Golden purl222",
+        "name": "White Esthetic",
         "category": "Men's skin care product",
         "imageUrl": [
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://m.media-amazon.com/images/I/61fbM9toOJL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61fbM9toOJL._SL1500_.jpg"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -66,11 +66,11 @@
     },
     {
         "id": "9",
-        "name": "Golden purl333",
+        "name": "Aenogon Makeup",
         "category": "Men's makeup product",
         "imageUrl": [
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://cdn.shopify.com/s/files/1/1265/7867/products/xtyxmndb5cclrj7g2cma_480x480.jpg?v=1563776805",
+            "https://cdn.shopify.com/s/files/1/1265/7867/products/xtyxmndb5cclrj7g2cma_480x480.jpg?v=1563776805"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},

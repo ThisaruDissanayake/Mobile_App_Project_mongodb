@@ -1,12 +1,12 @@
 [
     { 
         "id": "0",
-        "name": "Acne Oil free wash",
+        "name": "Acne Oil free washCC+",
         "category": "women's makeup product",
         "imageUrl": [
     
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://qvc.scene7.com/is/image/QVC/a/88/a344188.001",
+            "https://qvc.scene7.com/is/image/QVC/a/88/a344188.001"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -24,12 +24,12 @@
 
     {
         "id": "1",
-        "name": "Bodi Lotion",
+        "name": "Bodi LotionCC+",
         "category": "women's hair care product",
         "imageUrl": [
 
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://th.bing.com/th/id/OIP.nZ70hkAD9BNVOt8tk8A1GwHaHC?w=950&h=903&rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.nZ70hkAD9BNVOt8tk8A1GwHaHC?w=950&h=903&rs=1&pid=ImgDetMain"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -46,12 +46,12 @@
     },
     {
         "id": "2",
-        "name": "Bodi Lotion",
+        "name": "Beauty & BeyondCC+",
         "category": "women's skin care product",
         "imageUrl": [
 
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+           "https://i.pinimg.com/474x/36/40/f2/3640f2dae392e3ad7af3b6320fee59fc.jpg",
+            "https://i.pinimg.com/474x/36/40/f2/3640f2dae392e3ad7af3b6320fee59fc.jpg"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -68,12 +68,12 @@
     },
     {
         "id": "3",
-        "name": "Body Lotion",
+        "name": "Stretta MakeupCC+",
         "category": "women's skin care product",
         "imageUrl": [
 
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://qvc.scene7.com/is/image/QVC/u2/2/55/241155.001",
+            "https://qvc.scene7.com/is/image/QVC/u2/2/55/241155.001"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -90,12 +90,12 @@
     },
     {
         "id": "4",
-        "name": "Lipstick",
+        "name": "Little War PaintCC+ ",
         "category": "women's makeup product",
         "imageUrl": [
 
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://boots.scene7.com/is/image/Boots/10288057?id=-Klmv1&fmt=jpg&fit=constrain,1&wid=504&hei=548",
+            "https://boots.scene7.com/is/image/Boots/10288057?id=-Klmv1&fmt=jpg&fit=constrain,1&wid=504&hei=548"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -112,12 +112,78 @@
     },
     {
         "id": "5",
-        "name": "Hair growth oil",
+        "name": "Subtle Shimmer CC+",
         "category": "women's hair care product",
         "imageUrl": [
 
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg",
-            "https://m.media-amazon.com/images/I/41rNJKxcS0L._SX300_SY300_QL70_FMwebp_.jpg"
+            "https://th.bing.com/th/id/OIP.Qu0W6v4yut4nVqT3BVqiRQHaIN?w=924&h=1024&rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.Qu0W6v4yut4nVqT3BVqiRQHaIN?w=924&h=1024&rs=1&pid=ImgDetMain"
+        ],
+        "branch":[
+            {"branch": "Anuradhapura","isSelected":false},
+            {"branch": "Colombo","isSelected":false},
+            {"branch": "Hamabanthota","isSelected":false},
+            {"branch": "Kandy","isSelected":false},
+            {"branch": "Jaffna","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinteress best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
+    },
+    {
+        "id": "15",
+        "name": "Exotic BeautyCC+",
+        "category": "women's hair care product",
+        "imageUrl": [
+
+            "https://th.bing.com/th/id/OIP.Wg9r25OkFk2umTlk7UyJCwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.Wg9r25OkFk2umTlk7UyJCwHaHa?w=500&h=500&rs=1&pid=ImgDetMain"
+        ],
+        "branch":[
+            {"branch": "Anuradhapura","isSelected":false},
+            {"branch": "Colombo","isSelected":false},
+            {"branch": "Hamabanthota","isSelected":false},
+            {"branch": "Kandy","isSelected":false},
+            {"branch": "Jaffna","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinteress best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
+    },
+    {
+        "id": "16",
+        "name": "Intrepid SkinCC+",
+        "category": "women's hair care product",
+        "imageUrl": [
+
+            "https://th.bing.com/th/id/OIP.G0w1XoT5bNVXF3ehw7B-QwHaHa?rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.G0w1XoT5bNVXF3ehw7B-QwHaHa?rs=1&pid=ImgDetMain"
+        ],
+        "branch":[
+            {"branch": "Anuradhapura","isSelected":false},
+            {"branch": "Colombo","isSelected":false},
+            {"branch": "Hamabanthota","isSelected":false},
+            {"branch": "Kandy","isSelected":false},
+            {"branch": "Jaffna","isSelected":false}
+
+        ],
+        "oldPrice": "650.00",
+        "price": "800.00",
+        "description": "Discover Pinteress best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
+        "brand": "Sanoda"
+    },
+    {
+        "id": "17",
+        "name": "Greenish GlareCC+",
+        "category": "women's hair care product",
+        "imageUrl": [
+
+            "https://i5.walmartimages.com/asr/1b7da68c-e805-4a19-87f6-35f5c894181c.c8fa775e1037a91d1306f63a36b3d6fe.jpeg",
+            "https://i5.walmartimages.com/asr/1b7da68c-e805-4a19-87f6-35f5c894181c.c8fa775e1037a91d1306f63a36b3d6fe.jpeg"
         ],
         "branch":[
             {"branch": "Anuradhapura","isSelected":false},
@@ -132,6 +198,7 @@
         "description": "Discover Pinteress best ideas and inspiration for Acne face wash. Get inspired and try out new things.",
         "brand": "Sanoda"
     }
+    
 
     
     
