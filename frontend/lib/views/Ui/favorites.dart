@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/controllers/favorites_notifier.dart';
 // import 'package:frontend/models/constants.dart';
 import 'package:frontend/views/Ui/mainscreen.dart';
@@ -26,18 +27,18 @@ class _FavoritesState extends State<Favorites> {
 
     return Scaffold(
         body: SizedBox(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
+      height: 812.h,
+      width: 378.w,
       child: Stack(children: [
         Container(
-          padding: const EdgeInsets.fromLTRB(16, 45, 0, 0),
-          height: MediaQuery.of(context).size.height * 0.4,
-          width: MediaQuery.of(context).size.width,
+          padding:  EdgeInsets.fromLTRB(16.w, 45.h, 0, 0),
+          height: 325.h,
+          width:378.w,
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/t.jpg"), fit: BoxFit.fill)),
           child: Padding(
-            padding: const EdgeInsets.all(8),
+            padding:  EdgeInsets.all(8.h),
             child: Text(
               "My Favorutes",
               style: appstyle(36, Colors.white, FontWeight.bold),
@@ -58,8 +59,8 @@ class _FavoritesState extends State<Favorites> {
                       Radius.circular(12),
                     ),
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.11,
-                      width: MediaQuery.of(context).size.width,
+                      height: 90.h,
+                      width: 378.w,
                       decoration: BoxDecoration(
                           color: Colors.grey.shade100,
                           boxShadow: [

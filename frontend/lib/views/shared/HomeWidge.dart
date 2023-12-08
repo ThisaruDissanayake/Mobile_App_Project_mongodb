@@ -3,6 +3,7 @@
 // ignore: unused_import
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/controllers/product_provider.dart';
 import 'package:frontend/models/sneaker_models.dart';
 import 'package:frontend/views/Ui/product_by_cart.dart';
@@ -10,6 +11,7 @@ import 'package:frontend/views/Ui/product_page.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 import 'package:frontend/views/shared/new_creams.dart';
 import 'package:frontend/views/shared/product_card.dart';
+import 'package:frontend/views/shared/reusable_text.dart';
 import 'package:provider/provider.dart';
 
 
@@ -30,8 +32,8 @@ class HomeWidge extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.43,
-            width: MediaQuery.of(context).size.width * 0.9,
+            height: 350.h,
+            
             child: FutureBuilder<List<Sneakers>>(
                 future: _female,
                 builder: (context, snapshot) {
@@ -72,12 +74,12 @@ class HomeWidge extends StatelessWidget {
         Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+              padding:  EdgeInsets.fromLTRB(12.w, 10.h, 12.w, 10.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Latest Products",
+                  reusableText(
+                    text :"Latest Products",
                     style: appstyle(
                       24,
                       Colors.black,
@@ -95,17 +97,17 @@ class HomeWidge extends StatelessWidget {
                     },
                     child: Row(
                       children: [
-                        Text(
-                          "Show All",
+                        reusableText(
+                          text :"Show All",
                           style: appstyle(
-                            22,
+                            20,
                             Colors.black,
-                            FontWeight.bold,
+                            FontWeight.w500,
                           ),
                         ),
-                        const Icon(
+                        Icon(
                           Icons.arrow_right,
-                          size: 50,
+                          size: 50.h,
                         )
                       ],
                     ),
@@ -116,7 +118,7 @@ class HomeWidge extends StatelessWidget {
           ],
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.13,
+            height: 99.h,
             child: FutureBuilder<List<Sneakers>>(
                 future: _female,
                 builder: (context, snapshot) {
@@ -132,7 +134,7 @@ class HomeWidge extends StatelessWidget {
                         itemBuilder: (context, index) {
                           final cream = snapshot.data![index];
                           return Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding:  EdgeInsets.all(8.0.h),
                             child: NewCreams(
                               imageUrl: cream.imageUrl[1],
                             ),

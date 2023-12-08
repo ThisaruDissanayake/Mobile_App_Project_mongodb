@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 
 class CheackoutButton extends StatelessWidget {
@@ -20,7 +21,7 @@ class CheackoutButton extends StatelessWidget {
               color: Colors.black,
               borderRadius: BorderRadius.all(Radius.circular(12))),
           height: 50,
-          width: MediaQuery.of(context).size.width * 0.9,
+          width: 340.w,
           child: Center(
             child:
                 Text(label, style: appstyle(20, Colors.white, FontWeight.bold)),

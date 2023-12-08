@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/controllers/product_provider.dart';
 import 'package:frontend/controllers/favorites_notifier.dart';
 import 'package:frontend/models/sneaker_models.dart';
@@ -83,7 +84,7 @@ class _ProductPageState extends State<ProductPage> {
                             automaticallyImplyLeading: false,
                             leadingWidth: 0,
                             title: Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
+                              padding:  EdgeInsets.only(bottom: 10.h),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -123,8 +124,8 @@ class _ProductPageState extends State<ProductPage> {
                               children: [
                                 SizedBox(
                                   height:
-                                      MediaQuery.of(context).size.height * 0.5,
-                                  width: MediaQuery.of(context).size.width,
+                                      406.h,
+                                  width: 378.w,
                                   child: PageView.builder(
                                       scrollDirection: Axis.horizontal,
                                       itemCount: sneaker!.imageUrl.length,
@@ -136,13 +137,8 @@ class _ProductPageState extends State<ProductPage> {
                                         return Stack(
                                           children: [
                                             Container(
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.39,
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
+                                              height: 316.h,
+                                              width:378.w,
                                               color: Colors.grey.shade300,
                                               child: CachedNetworkImage(
                                                 imageUrl:
@@ -197,10 +193,7 @@ class _ProductPageState extends State<ProductPage> {
                                                 bottom: 0,
                                                 right: 0,
                                                 left: 0,
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    0.3,
+                                                height: 244.h,
                                                 child: Row(
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.center,
@@ -238,12 +231,9 @@ class _ProductPageState extends State<ProductPage> {
                                           topRight: Radius.circular(30),
                                         ),
                                         child: Container(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.645,
+                                          height: 600.h,
                                           width:
-                                              MediaQuery.of(context).size.width,
+                                              378.w,
                                           color: Colors.white,
                                           child: Padding(
                                             padding: const EdgeInsets.all(12),
@@ -258,15 +248,15 @@ class _ProductPageState extends State<ProductPage> {
                                                       Colors.black,
                                                       FontWeight.bold),
                                                 ),
-                                                Row(
+                                                Column(
                                                   children: [
                                                     Text(sneaker.category,
                                                         style: appstyle(
                                                             20,
                                                             Colors.grey,
                                                             FontWeight.w500)),
-                                                    const SizedBox(
-                                                      width: 20,
+                                                     SizedBox(
+                                                      height: 5.h,
                                                     ),
                                                     RatingBar.builder(
                                                       initialRating: 4,
@@ -279,12 +269,12 @@ class _ProductPageState extends State<ProductPage> {
                                                       itemPadding:
                                                           const EdgeInsets
                                                               .symmetric(
-                                                              horizontal: 1),
+                                                              horizontal: 2),
                                                       itemBuilder:
                                                           (context, _) =>
                                                               const Icon(
                                                         Icons.star,
-                                                        size: 18,
+                                                        size: 20,
                                                         color: Colors.black,
                                                       ),
                                                       onRatingUpdate:
@@ -292,8 +282,8 @@ class _ProductPageState extends State<ProductPage> {
                                                     )
                                                   ],
                                                 ),
-                                                const SizedBox(
-                                                  height: 20,
+                                                 SizedBox(
+                                                  height: 10.h,
                                                 ),
                                                 Row(
                                                   mainAxisAlignment:
@@ -347,22 +337,20 @@ class _ProductPageState extends State<ProductPage> {
                                                   children: [
                                                     Row(
                                                       children: [
-                                                        Text(
-                                                          "Selcted Branch",
-                                                          style: appstyle(
-                                                              20,
-                                                              Colors.black,
-                                                              FontWeight.w600),
-                                                        ),
-                                                        const SizedBox(
-                                                          width: 15,
-                                                        ),
+                                                        // Text(
+                                                        //   "Selcted Branch",
+                                                        //   style: appstyle(
+                                                        //       20,
+                                                        //       Colors.black,
+                                                        //       FontWeight.w600),
+                                                        // ),
+                                                        
                                                         Text(
                                                           "Nearset Branchers",
                                                           style: appstyle(
-                                                              10,
+                                                              20,
                                                               Colors.grey,
-                                                              FontWeight.w500),
+                                                              FontWeight.w600),
                                                         ),
                                                       ],
                                                     ),
@@ -462,15 +450,13 @@ class _ProductPageState extends State<ProductPage> {
                                                   height: 10,
                                                 ),
                                                 const Divider(
-                                                  indent: 10,
-                                                  endIndent: 10,
+                                                  indent: 20,
+                                                  endIndent: 20,
                                                   color: Colors.black,
                                                 ),
                                                 SizedBox(
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                      0.8,
+                                                  
+                                                  width: 303.w,
                                                   child: Text(
                                                     sneaker.brand,
                                                     style: appstyle(
@@ -480,7 +466,7 @@ class _ProductPageState extends State<ProductPage> {
                                                   ),
                                                 ),
                                                 const SizedBox(
-                                                  height: 10,
+                                                  height: 5,
                                                 ),
                                                 Text(
                                                   sneaker.description,
@@ -500,7 +486,7 @@ class _ProductPageState extends State<ProductPage> {
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsets.only(
-                                                            top: 12),
+                                                            top: 10),
                                                     child: CheackoutButton(
                                                       onTap: () async {
                                                         _createCart({

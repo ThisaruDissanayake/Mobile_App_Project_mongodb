@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/views/shared/appstyle.dart';
+import 'package:frontend/views/shared/reusable_text.dart';
 
 class StaggerTile extends StatefulWidget {
   const StaggerTile({
@@ -8,11 +10,13 @@ class StaggerTile extends StatefulWidget {
     required this.imageUrl,
     required this.name,
     required this.price,
+    required this.category,
   });
 
   final String imageUrl;
   final String name;
   final String price;
+  final String category;
 
   @override
   State<StaggerTile> createState() => _StaggerTileState();
@@ -34,8 +38,8 @@ class _StaggerTileState extends State<StaggerTile> {
           children: [
             CachedNetworkImage(imageUrl: widget.imageUrl, fit: BoxFit.fill),
             Container(
-              padding: const EdgeInsets.only(top: 12),
-              height: 110,
+              padding: EdgeInsets.only(top: 12.h),
+              height: 110.h,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,9 +48,13 @@ class _StaggerTileState extends State<StaggerTile> {
                     widget.name,
                     style: appstyleWithHt(20, Colors.black, FontWeight.w700, 1),
                   ),
-                  Text(
-                    widget.price,
+                  reusableText(
+                    text: widget.price,
                     style: appstyle(20, Colors.black, FontWeight.w500),
+                  ),
+                  reusableText(
+                    text: widget.category,
+                    style: appstyle(10, Colors.grey, FontWeight.w300),
                   )
                 ],
               ),

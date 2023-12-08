@@ -2,6 +2,7 @@
 // ignore_for_file: unused_field, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/controllers/product_provider.dart';
 import 'package:frontend/models/sneaker_models.dart';
 import 'package:frontend/services/helper.dart';
@@ -10,6 +11,7 @@ import 'package:frontend/views/shared/appstyle.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:frontend/views/shared/new_creams.dart';
 import 'package:frontend/views/shared/product_card.dart';
+import 'package:frontend/views/shared/reusable_text.dart';
 import 'package:provider/provider.dart';
 //import 'package:flutter_antd_icons/flutter_antd_icons.dart';
 
@@ -35,30 +37,31 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       home: Scaffold(
         backgroundColor: const Color(0xFFE2E2E2),
         body: SizedBox(
-          height: MediaQuery.of(context).size.height,
+          height: 820.h,
+          width: 378.w,
           child: Stack(
             children: [
               Container(
-                padding: const EdgeInsets.fromLTRB(16, 45, 0, 0),
-                height: MediaQuery.of(context).size.height * 0.4,
+                padding:  EdgeInsets.fromLTRB(16.w, 45.h, 0, 0),
+                height: 375.h,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/t.jpg"),
                       fit: BoxFit.fill),
                 ),
                 child: Container(
-                  padding: const EdgeInsets.only(left: 8, bottom: 15),
-                  width: MediaQuery.of(context).size.width,
+                  padding:  EdgeInsets.only(left: 2.w, bottom: 15.h),
+                  width: 378.w,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Skin Care Products",
+                      reusableText(
+                        text : "Skin Care Products",
                         style: appstyleWithHt(
-                            38, Colors.white, FontWeight.bold, 1.5),
+                            36, Colors.white, FontWeight.bold, 1.5),
                       ),
-                      Text(
-                        "Collection",
+                      reusableText(
+                        text : "Collection",
                         style: appstyleWithHt(
                             38, Colors.white, FontWeight.bold, 1.2),
                       ),
@@ -89,9 +92,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.265),
+                    top:203.h),
                 child: Container(
-                  padding: const EdgeInsets.only(left: 12),
+                  padding:  EdgeInsets.only(left: 12.w),
                   child: TabBarView(controller: _tabController, children: [
                     HomeWidge(
                       female: productNotifier.female,
@@ -114,4 +117,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
     );
   }
+  
+ 
 }

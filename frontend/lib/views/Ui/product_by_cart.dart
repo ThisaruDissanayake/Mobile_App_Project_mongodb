@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/controllers/product_provider.dart';
 // import 'package:frontend/models/sneaker_models.dart';
 // import 'package:frontend/services/helper.dart';
@@ -47,8 +48,8 @@ class _ProductByCartState extends State<ProductByCart>
         child: Stack(
           children: [
             Container(
-              padding: const EdgeInsets.fromLTRB(16, 45, 0, 0),
-              height: MediaQuery.of(context).size.height * 0.4,
+              padding:  EdgeInsets.fromLTRB(16.w, 45.h, 0, 0),
+              height: 325.h,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/t.jpg"), fit: BoxFit.fill),
@@ -57,7 +58,7 @@ class _ProductByCartState extends State<ProductByCart>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(6, 12, 16, 18),
+                    padding:  EdgeInsets.fromLTRB(6.w, 12.h, 16.w, 18.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

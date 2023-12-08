@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/controllers/cart_provider.dart';
 import 'package:frontend/controllers/favorites_notifier.dart';
 import 'package:frontend/controllers/mainscreen_provider.dart';
@@ -31,7 +32,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  ScreenUtilInit(
+designSize:  const Size (378 , 820),
+minTextAdapt: true,
+splitScreenMode: true,
+builder: (context, child){
+return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'dbestech',
       theme: ThemeData(
@@ -39,5 +45,11 @@ class MyApp extends StatelessWidget {
       ),
       home: MainScreen(),
     );
+
+
+}
+
+
+);
   }
 }

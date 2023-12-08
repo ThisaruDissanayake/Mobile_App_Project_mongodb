@@ -52,6 +52,7 @@ class FemaleAll extends StatelessWidget {
                     child: StaggerTile(
                       price: "LKR ${cream.price}",
                       name: cream.name,
+                      category: cream.category,
                       imageUrl: cream.imageUrl[0],
                     ),
                   );
