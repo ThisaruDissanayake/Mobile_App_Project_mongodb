@@ -141,7 +141,7 @@ class _FavoritesState extends State<Favorites> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const Favorites()));
+                                        builder: (context) =>  MainScreen()));
                               },
                               child: const Icon(Icons.heart_broken),
                             ),
