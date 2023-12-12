@@ -2,7 +2,7 @@ class Config{
    //static const apiUrl = "http://localhost:3005";
     //static const String apiUrl = "http://192.168.123.116:3005";
   //static const apiUrl = "localhost:3005";
-    static final String apiUrl = "http://192.168.123.47:${int.parse("3005", radix: 10)}";
+    static final String apiUrl = "http://192.168.137.116:${int.parse("3005", radix: 10)}";
   static const paymentBaseUrl = "paymentserver-production.up.railway.app";
   static const String loginUrl = "/api/login";
   static const String paymentUrl = "/stripe/create-checkout-session";

@@ -17,7 +17,12 @@ class Helper {
     if (response.statusCode == 200) {
       final maleList = sneakersFromJson(response.body);
       var male = maleList
-          .where((element) => element.category == "Men's hair care product");
+          .where((element) =>
+           element.category == "Men's hair care product" ||
+          element.category == "Men's skin care product" ||
+           element.category == "Men's makeup product"
+          
+           );
       return male.toList();
     } else {
       throw Exception("Failed to get sneakers list");
@@ -33,7 +38,10 @@ class Helper {
     if (response.statusCode == 200) {
       final femaleList = sneakersFromJson(response.body);
       var female = femaleList
-          .where((element) => element.category == "women's makeup product");
+          .where((element) => 
+          element.category == "women's hair care product" ||
+          element.category == "women's skin care product" ||
+          element.category == "women's makeup product");
       return female.toList();
     } else {
       throw Exception("Failed to get sneakers list");
@@ -49,7 +57,10 @@ class Helper {
     if (response.statusCode == 200) {
       final kidsList = sneakersFromJson(response.body);
       var kids = kidsList
-          .where((element) => element.category == "kid's skin care product");
+          .where((element) => 
+          element.category == "kid's skin care product" ||
+          element.category == "kid's hair care product"
+          );
       return kids.toList();
     } else {
       throw Exception("Failed to get sneakers list");

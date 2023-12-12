@@ -67,7 +67,10 @@ class _ProductPageState extends State<ProductPage> {
     favoritesNotifer.getFavorites();
     return MaterialApp(
       home: Scaffold(
+        
           body: Consumer<ProductNotifier>(
+
+            
                       builder: (context, productNotifier, child) {
                     return CustomScrollView(
                       slivers: [
