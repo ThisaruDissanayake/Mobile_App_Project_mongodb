@@ -5,7 +5,7 @@ import 'package:frontend/services/helper.dart';
 class ProductNotifier extends ChangeNotifier {
   int _activepage = 0;
   List<dynamic> _branchers = [];
-  List<String> _branche = [];
+  List<String> _branches = [];
 
   
 
@@ -31,10 +31,10 @@ class ProductNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<String> get branch => _branche;
+  List<String> get branches => _branches;
 
-  set branch(List<String> newBranch1) {
-    _branche = newBranch1;
+  set branches(List<String> newBranch) {
+    _branches = newBranch;
     notifyListeners();
   }
 

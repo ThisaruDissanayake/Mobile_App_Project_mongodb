@@ -14,10 +14,11 @@ import 'package:provider/provider.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({super.key, required this.id, required this.category});
+  const ProductPage({super.key,  required this.sneakers});
 
-  final String id;
-  final String category;
+  // final String id;
+  // final String category;
+  final Sneakers sneakers;
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -59,24 +60,14 @@ class _ProductPageState extends State<ProductPage> {
 
   @override
   Widget build(BuildContext context) {
-    var productNotifier = Provider.of<ProductNotifier>(context);
-    productNotifier.getCreams(widget.category, widget.id);
+    // var productNotifier = Provider.of<ProductNotifier>(context);
+    // productNotifier.getCreams(widget.category, widget.id);
     var favoritesNotifer =
         Provider.of<FavoritesNotifier>(context, listen: true);
     favoritesNotifer.getFavorites();
     return MaterialApp(
       home: Scaffold(
-          body: FutureBuilder<Sneakers>(
-              future: productNotifier.sneaker,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const CircularProgressIndicator();
-                } else if (snapshot.hasError) {
-                  return Text("Error ${snapshot.error}");
-                } else {
-                  final sneaker = snapshot.data;
-
-                  return Consumer<ProductNotifier>(
+          body: Consumer<ProductNotifier>(
                       builder: (context, productNotifier, child) {
                     return CustomScrollView(
                       slivers: [
@@ -84,7 +75,7 @@ class _ProductPageState extends State<ProductPage> {
                             automaticallyImplyLeading: false,
                             leadingWidth: 0,
                             title: Padding(
-                              padding:  EdgeInsets.only(bottom: 10.h),
+                              padding: EdgeInsets.only(bottom: 10.h),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -123,12 +114,11 @@ class _ProductPageState extends State<ProductPage> {
                                 background: Stack(
                               children: [
                                 SizedBox(
-                                  height:
-                                      406.h,
+                                  height: 406.h,
                                   width: 378.w,
                                   child: PageView.builder(
                                       scrollDirection: Axis.horizontal,
-                                      itemCount: sneaker!.imageUrl.length,
+                                      itemCount: widget.sneakers.imageUrl.length,
                                       controller: pageController,
                                       onPageChanged: (page) {
                                         productNotifier.activePage = page;
@@ -138,11 +128,11 @@ class _ProductPageState extends State<ProductPage> {
                                           children: [
                                             Container(
                                               height: 316.h,
-                                              width:378.w,
+                                              width: 378.w,
                                               color: Colors.grey.shade300,
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                    sneaker.imageUrl[index],
+                                                    widget.sneakers.imageUrl[index],
                                                 fit: BoxFit.contain,
                                               ),
                                             ),
@@ -158,7 +148,7 @@ class _ProductPageState extends State<ProductPage> {
                                                     onTap: () async {
                                                       if (favoritesNotifier.ids
                                                           .contains(
-                                                              widget.id)) {
+                                                              widget.sneakers.id)) {
                                                         Navigator.push(
                                                             context,
                                                             MaterialPageRoute(
@@ -168,21 +158,20 @@ class _ProductPageState extends State<ProductPage> {
                                                       } else {
                                                         favoritesNotifer
                                                             .createFav({
-                                                          "id": sneaker.id,
-                                                          "name": sneaker.name,
+                                                          "id": widget.sneakers.id,
+                                                          "name": widget.sneakers.name,
                                                           "category":
-                                                              sneaker.category,
+                                                              widget.sneakers.category,
                                                           "price":
-                                                              sneaker.price,
-                                                          "imageUrl": sneaker
-                                                              .imageUrl[0],
+                                                              widget.sneakers.price,
+                                                          "imageUrl": widget.sneakers                                                              .imageUrl[0],
                                                         });
                                                       }
                                                       setState(() {});
                                                     },
                                                     child: favoritesNotifier.ids
                                                             .contains(
-                                                                sneaker.id)
+                                                                widget.sneakers.id)
                                                         ? const Icon(
                                                             Icons.favorite)
                                                         : const Icon(Icons
@@ -199,8 +188,7 @@ class _ProductPageState extends State<ProductPage> {
                                                       MainAxisAlignment.center,
                                                   children:
                                                       List<Widget>.generate(
-                                                          sneaker
-                                                              .imageUrl.length,
+                                                          widget.sneakers                                                              .imageUrl.length,
                                                           (index) => Padding(
                                                                 padding: const EdgeInsets
                                                                     .symmetric(
@@ -232,8 +220,7 @@ class _ProductPageState extends State<ProductPage> {
                                         ),
                                         child: Container(
                                           height: 600.h,
-                                          width:
-                                              378.w,
+                                          width: 378.w,
                                           color: Colors.white,
                                           child: Padding(
                                             padding: const EdgeInsets.all(12),
@@ -242,7 +229,7 @@ class _ProductPageState extends State<ProductPage> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  sneaker.name,
+                                                  widget.sneakers.name,
                                                   style: appstyle(
                                                       40,
                                                       Colors.black,
@@ -250,12 +237,12 @@ class _ProductPageState extends State<ProductPage> {
                                                 ),
                                                 Column(
                                                   children: [
-                                                    Text(sneaker.category,
+                                                    Text(widget.sneakers.category,
                                                         style: appstyle(
                                                             20,
                                                             Colors.grey,
                                                             FontWeight.w500)),
-                                                     SizedBox(
+                                                    SizedBox(
                                                       height: 5.h,
                                                     ),
                                                     RatingBar.builder(
@@ -282,7 +269,7 @@ class _ProductPageState extends State<ProductPage> {
                                                     )
                                                   ],
                                                 ),
-                                                 SizedBox(
+                                                SizedBox(
                                                   height: 10.h,
                                                 ),
                                                 Row(
@@ -291,7 +278,7 @@ class _ProductPageState extends State<ProductPage> {
                                                           .spaceBetween,
                                                   children: [
                                                     Text(
-                                                      "LKR ${sneaker.price}",
+                                                      "LKR ${widget.sneakers.price}",
                                                       style: appstyle(
                                                           26,
                                                           Colors.black,
@@ -344,7 +331,7 @@ class _ProductPageState extends State<ProductPage> {
                                                         //       Colors.black,
                                                         //       FontWeight.w600),
                                                         // ),
-                                                        
+
                                                         Text(
                                                           "Nearset Branchers",
                                                           style: appstyle(
@@ -370,7 +357,7 @@ class _ProductPageState extends State<ProductPage> {
                                                               EdgeInsets.zero,
                                                           itemBuilder:
                                                               (context, index) {
-                                                            final branch =
+                                                            final branches =
                                                                 productNotifier
                                                                         .branchers[
                                                                     index];
@@ -397,11 +384,11 @@ class _ProductPageState extends State<ProductPage> {
                                                                       Colors
                                                                           .white,
                                                                   label: Text(
-                                                                    branch[
+                                                                    branches[
                                                                         'branch'],
                                                                     style: appstyle(
                                                                         18,
-                                                                        branch['isSelected']
+                                                                        branches['isSelected']
                                                                             ? Colors
                                                                                 .white
                                                                             : Colors
@@ -416,22 +403,23 @@ class _ProductPageState extends State<ProductPage> {
                                                                       .symmetric(
                                                                       vertical:
                                                                           8),
-                                                                  selected: branch[
-                                                                      'isSelected'],
+                                                                  selected:
+                                                                      branches[
+                                                                          'isSelected'],
                                                                   onSelected:
                                                                       (newState) {
                                                                     if (productNotifier
-                                                                        .branch
+                                                                        .branches
                                                                         .contains(
-                                                                            branch["branch"])) {
+                                                                            branches["branch"])) {
                                                                       productNotifier
-                                                                          .branch
+                                                                          .branches
                                                                           .remove(
-                                                                              branch['branch']);
+                                                                              branches['branch']);
                                                                     } else {
                                                                       productNotifier
-                                                                          .branch
-                                                                          .add(branch[
+                                                                          .branches
+                                                                          .add(branches[
                                                                               'branch']);
                                                                     }
                                                                     // print(productNotifier
@@ -455,10 +443,9 @@ class _ProductPageState extends State<ProductPage> {
                                                   color: Colors.black,
                                                 ),
                                                 SizedBox(
-                                                  
                                                   width: 303.w,
                                                   child: Text(
-                                                    sneaker.brand,
+                                                    widget.sneakers.brand,
                                                     style: appstyle(
                                                         20,
                                                         Colors.black,
@@ -469,7 +456,7 @@ class _ProductPageState extends State<ProductPage> {
                                                   height: 5,
                                                 ),
                                                 Text(
-                                                  sneaker.description,
+                                                  widget.sneakers.description,
                                                   textAlign: TextAlign.justify,
                                                   maxLines: 20,
                                                   style: appstyle(
@@ -490,21 +477,20 @@ class _ProductPageState extends State<ProductPage> {
                                                     child: CheackoutButton(
                                                       onTap: () async {
                                                         _createCart({
-                                                          "id": sneaker.id,
-                                                          "name": sneaker.name,
+                                                          "id": widget.sneakers.id,
+                                                          "name": widget.sneakers.name,
                                                           "category":
-                                                              sneaker.category,
+                                                              widget.sneakers.category,
                                                           "branches":
                                                               productNotifier
-                                                                  .branch,
-                                                          "imageUrl": sneaker
-                                                              .imageUrl[0],
+                                                                  .branches,
+                                                          "imageUrl": widget.sneakers                                                              .imageUrl[0],
                                                           "price":
-                                                              sneaker.price,
+                                                              widget.sneakers.price,
                                                           "qty": 1
                                                         });
 
-                                                        productNotifier.branch
+                                                        productNotifier.branches
                                                             .clear();
                                                         Navigator.pushReplacement(
                                                             context,
@@ -525,9 +511,8 @@ class _ProductPageState extends State<ProductPage> {
                             )))
                       ],
                     );
-                  });
-                }
-              })),
+                  })
+                ),
     );
   }
 }

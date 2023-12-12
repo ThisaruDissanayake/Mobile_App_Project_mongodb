@@ -56,9 +56,7 @@ class HomeWidge extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ProductPage(
-                                          id: cream.id,
-                                          category: cream.category)));
+                                      builder: (context) => ProductPage(sneakers:cream)));
                             },
                             child: ProductCard(
                               price: "LKR ${cream.price}",
@@ -136,6 +134,13 @@ class HomeWidge extends StatelessWidget {
                           return Padding(
                             padding:  EdgeInsets.all(8.0.h),
                             child: NewCreams(
+                              onTap:(){
+                                productNotifier.branchers=cream.branches;
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context)=> ProductPage(sneakers: cream))
+                                );
+                              },
                               imageUrl: cream.imageUrl[1],
                             ),
                           );

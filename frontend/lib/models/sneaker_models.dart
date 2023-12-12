@@ -91,7 +91,7 @@ class Sneakers {
         "category": category,
         "imageUrl": List<dynamic>.from(imageUrl.map((x) => x)),
         "oldPrice": oldPrice,
-        "branches": List<dynamic>.from(branches.map((x) => x.toJson())),
+        "branches": List<String>.from(branches.map((x) => x.toJson())),
         "price": price,
         "description": description,
     };
@@ -109,7 +109,7 @@ class Branch {
     });
 
     factory Branch.fromJson(Map<String, dynamic> json) => Branch(
-        branch: json["branch"],
+        branch: json["branch"]  ,
         isSelected: json["isSelected"],
         id: json["_id"],
     );

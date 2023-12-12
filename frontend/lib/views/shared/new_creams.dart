@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NewCreams extends StatelessWidget {
   const NewCreams({
-    super.key, required this.imageUrl,
+    super.key, required this.imageUrl, required Null Function() onTap,
   });
 
   final String imageUrl;

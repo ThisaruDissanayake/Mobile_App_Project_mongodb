@@ -21,7 +21,7 @@ class FemaleAll extends StatelessWidget {
         future: _female,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const CircularProgressIndicator();
+            return const Center(child: CircularProgressIndicator.adaptive());
           } else if (snapshot.hasError) {
             return Text("Error ${snapshot.error}");
           } else {
@@ -37,14 +37,12 @@ class FemaleAll extends StatelessWidget {
                   final cream = snapshot.data![index];
                   return GestureDetector(
                     onTap: () {
-                      productNotifier.branchers = cream.branches;
+                      // productNotifier.branchers = cream.branches!;
 
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ProductPage(
-                            id: cream.id,
-                            category: cream.category,
+                          builder: (context) => ProductPage(sneakers: cream,
                           ),
                         ),
                       );
