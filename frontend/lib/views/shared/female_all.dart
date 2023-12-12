@@ -37,7 +37,7 @@ class FemaleAll extends StatelessWidget {
                   final cream = snapshot.data![index];
                   return GestureDetector(
                     onTap: () {
-                      productNotifier.branchers = cream.branch;
+                      productNotifier.branchers = cream.branches;
 
                       Navigator.push(
                         context,

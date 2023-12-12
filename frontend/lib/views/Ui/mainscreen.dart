@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/controllers/mainscreen_provider.dart';
 // import 'package:frontend/views/Ui/cartpage.dart';
-import 'package:frontend/views/Ui/cart.dart';
+//import 'package:frontend/views/Ui/cart.dart';
 import 'package:frontend/views/Ui/favorites.dart';
 import 'package:frontend/views/Ui/homepage.dart';
 import 'package:frontend/views/Ui/profile.dart';
@@ -12,12 +12,11 @@ import 'package:provider/provider.dart';
 // ignore: must_be_immutable
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
-  List<Widget> pageList = const [
-    HomePage(),
-    SearchPage(),
+  List<Widget> pageList = [
+    const HomePage(),
+    const SearchPage(),
     Favorites(),
-    CartPage(),
-    ProfilePage(),
+    const ProfilePage(),
   ];
 
   @override

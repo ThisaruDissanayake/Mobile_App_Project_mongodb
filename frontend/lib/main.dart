@@ -32,24 +32,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ScreenUtilInit(
-designSize:  const Size (378 , 820),
-minTextAdapt: true,
-splitScreenMode: true,
-builder: (context, child){
-return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'dbestech',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MainScreen(),
-    );
-
+// return  ScreenUtilInit(
+// designSize:  const Size (375 , 820),
+// minTextAdapt: true,
+// splitScreenMode: true,
+// builder: (context, child){
+return ScreenUtilInit(
+  designSize:  const Size (375 , 820),
+  minTextAdapt: true,
+  splitScreenMode: true,
+  builder: (context,child) {
+    return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'dbestech',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: MainScreen(),
+        );
+  }
+);
 
 }
-
-
-);
-  }
+// );
+//   }
 }

@@ -7,7 +7,7 @@ const ProductSchema=new mongoose.Schema({
         required:true
     },
 
-    title:
+    brand:
     {
         type:String ,
         required:true
@@ -31,10 +31,10 @@ const ProductSchema=new mongoose.Schema({
         required:true
     },
 
-    sizes:{
+    branches:{
         type:[
             {
-                size:{
+                branch:{
                     type:String, required : true
                 },
                 isSelected:{

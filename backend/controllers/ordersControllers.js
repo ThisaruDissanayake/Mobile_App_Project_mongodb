@@ -7,7 +7,7 @@ module.exports={
             const userOrders =await Orders.find({userId})
             .populate({
                 path:'productId',
-                select:'-sizes -oldPrice -description -category'
+                select:'-branches -oldPrice -description -category'
 
             }).exec();
 

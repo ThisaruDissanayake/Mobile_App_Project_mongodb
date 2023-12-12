@@ -494,7 +494,7 @@ class _ProductPageState extends State<ProductPage> {
                                                           "name": sneaker.name,
                                                           "category":
                                                               sneaker.category,
-                                                          "branch":
+                                                          "branches":
                                                               productNotifier
                                                                   .branch,
                                                           "imageUrl": sneaker

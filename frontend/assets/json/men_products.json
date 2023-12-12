@@ -8,7 +8,7 @@
             "https://www.z-pharm.gr/files/products/396c13ce3ec9f6a4ef7bcbd44ae7cf0d.jpg",
             "https://www.z-pharm.gr/files/products/396c13ce3ec9f6a4ef7bcbd44ae7cf0d.jpg"
         ],
-        "branch":[
+        "branches":[
             {"branch": "Anuradhapura","isSelected":false},
             {"branch": "Colombo","isSelected":false},
             {"branch": "Hamabanthota","isSelected":false},
@@ -30,7 +30,7 @@
             "https://th.bing.com/th/id/OIP.CzT01kaHZJ_6S9BWnYwa4QHaHa?w=700&h=700&rs=1&pid=ImgDetMain",
             "https://th.bing.com/th/id/OIP.CzT01kaHZJ_6S9BWnYwa4QHaHa?w=700&h=700&rs=1&pid=ImgDetMain"
         ],
-        "branch":[
+        "branches":[
             {"branch": "Anuradhapura","isSelected":false},
             {"branch": "Colombo","isSelected":false},
             {"branch": "Hamabanthota","isSelected":false},
@@ -51,7 +51,7 @@
             "https://m.media-amazon.com/images/I/61fbM9toOJL._SL1500_.jpg",
             "https://m.media-amazon.com/images/I/61fbM9toOJL._SL1500_.jpg"
         ],
-        "branch":[
+        "branches":[
             {"branch": "Anuradhapura","isSelected":false},
             {"branch": "Colombo","isSelected":false},
             {"branch": "Hamabanthota","isSelected":false},
@@ -72,7 +72,7 @@
             "https://cdn.shopify.com/s/files/1/1265/7867/products/xtyxmndb5cclrj7g2cma_480x480.jpg?v=1563776805",
             "https://cdn.shopify.com/s/files/1/1265/7867/products/xtyxmndb5cclrj7g2cma_480x480.jpg?v=1563776805"
         ],
-        "branch":[
+        "branches":[
             {"branch": "Anuradhapura","isSelected":false},
             {"branch": "Colombo","isSelected":false},
             {"branch": "Hamabanthota","isSelected":false},

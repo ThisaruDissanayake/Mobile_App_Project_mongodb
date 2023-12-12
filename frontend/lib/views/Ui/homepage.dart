@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/t.jpg"),
-                      fit: BoxFit.fill),
+                      fit: BoxFit.cover),
                 ),
                 child: Container(
                   padding:  EdgeInsets.only(left: 2.w, bottom: 15.h),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       reusableText(
-                        text : "Skin Care Products",
+                        text : "Buty Products",
                         style: appstyleWithHt(
                             36, const Color.fromARGB(255, 188, 3, 142), FontWeight.bold, 1.5),
                       ),

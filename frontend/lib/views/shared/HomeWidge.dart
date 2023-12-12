@@ -38,7 +38,7 @@ class HomeWidge extends StatelessWidget {
                 future: _female,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const CircularProgressIndicator();
+                    return const Center(child:CircularProgressIndicator.adaptive()) ;
                   } else if (snapshot.hasError) {
                     return Text("Error ${snapshot.error}");
                   } else {
@@ -50,7 +50,7 @@ class HomeWidge extends StatelessWidget {
                           final cream = snapshot.data![index];
                           return GestureDetector(
                             onTap: () {
-                              productNotifier.branchers = cream.branch;
+                              productNotifier.branchers = cream.branches;
                              
 
                               Navigator.push(
@@ -123,7 +123,7 @@ class HomeWidge extends StatelessWidget {
                 future: _female,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const CircularProgressIndicator();
+                    return const Center(child:CircularProgressIndicator.adaptive());
                   } else if (snapshot.hasError) {
                     return Text("Error ${snapshot.error}");
                   } else {
