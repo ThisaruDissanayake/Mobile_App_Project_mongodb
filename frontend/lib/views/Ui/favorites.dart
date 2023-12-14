@@ -7,6 +7,7 @@ import 'package:frontend/views/Ui/mainscreen.dart';
 import 'package:frontend/views/shared/appstyle.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
+// import 'package:frontend/views/Ui/auth_controller.dart';
 
 class Favorites extends StatefulWidget {
   const Favorites({super.key});

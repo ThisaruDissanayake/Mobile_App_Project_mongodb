@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/controllers/mainscreen_provider.dart';
+import 'package:frontend/views/Ui/cart.dart';
 // import 'package:frontend/views/Ui/cartpage.dart';
 //import 'package:frontend/views/Ui/cart.dart';
 import 'package:frontend/views/Ui/favorites.dart';
@@ -8,14 +9,17 @@ import 'package:frontend/views/Ui/profile.dart';
 import 'package:frontend/views/Ui/searchpage.dart';
 import 'package:frontend/views/shared/bottom_nav.dart';
 import 'package:provider/provider.dart';
+// import 'package:frontend/views/Ui/auth_controller.dart';
 
 // ignore: must_be_immutable
 class MainScreen extends StatelessWidget {
-  MainScreen({super.key});
+  
+  MainScreen({Key? key}) : super(key: key);
   List<Widget> pageList = [
     const HomePage(),
     const SearchPage(),
     Favorites(),
+    const CartPage(),
     const ProfilePage(),
   ];
 

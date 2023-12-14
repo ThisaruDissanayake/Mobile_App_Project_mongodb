@@ -98,56 +98,13 @@ class _ProductPageState extends State<ProductPage> {
                                       color: Colors.black,
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: null,
-                                    child: const Icon(
-                                      Icons.more_horiz,
-                                      color: Colors.black,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            pinned: true,
-                            snap: false,
-                            floating: true,
-                            backgroundColor: Colors.transparent,
-                            expandedHeight: MediaQuery.of(context).size.height,
-                            flexibleSpace: FlexibleSpaceBar(
-                                background: Stack(
-                              children: [
-                                SizedBox(
-                                  height: 406.h,
-                                  width: 378.w,
-                                  child: PageView.builder(
-                                      scrollDirection: Axis.horizontal,
-                                      itemCount: widget.sneakers.imageUrl.length,
-                                      controller: pageController,
-                                      onPageChanged: (page) {
-                                        productNotifier.activePage = page;
-                                      },
-                                      itemBuilder: (context, int index) {
-                                        return Stack(
-                                          children: [
-                                            Container(
-                                              height: 316.h,
-                                              width: 378.w,
-                                              color: Colors.grey.shade300,
-                                              child: CachedNetworkImage(
-                                                imageUrl:
-                                                    widget.sneakers.imageUrl[index],
-                                                fit: BoxFit.contain,
-                                              ),
-                                            ),
-                                            Positioned(
-                                                right: 20,
-                                                top: 100,
-                                                child:
-                                                    Consumer<FavoritesNotifier>(
+
+                                   Consumer<FavoritesNotifier>(
                                                         builder: (context,
                                                             favoritesNotifier,
                                                             child) {
-                                                  return GestureDetector(
+                                                  return 
+                                                  GestureDetector(
                                                     onTap: () async {
                                                       if (favoritesNotifier.ids
                                                           .contains(
@@ -176,11 +133,59 @@ class _ProductPageState extends State<ProductPage> {
                                                             .contains(
                                                                 widget.sneakers.id)
                                                         ? const Icon(
-                                                            Icons.favorite)
+                                                            Icons.favorite,color:Colors.red)
                                                         : const Icon(Icons
-                                                            .favorite_border),
+                                                            .favorite_border,color:Colors.red),
+                                                           
                                                   );
-                                                })),
+                                                })
+                                  // GestureDetector(
+                                  //   onTap: null,
+                                  //   child: const Icon(
+                                  //     Icons.more_horiz,
+                                  //     color: Colors.black,
+                                  //   ),
+                                  // )
+                                ],
+                              ),
+                            ),
+                            pinned: true,
+                            snap: false,
+                            floating: true,
+                            backgroundColor: Colors.transparent,
+                            expandedHeight: MediaQuery.of(context).size.height,
+                            flexibleSpace: FlexibleSpaceBar(
+                                background: Stack(
+                              children: [
+                                SizedBox(
+                                  height: 480.h,
+                                  width: 378.w,
+                                  child: PageView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: widget.sneakers.imageUrl.length,
+                                      controller: pageController,
+                                      onPageChanged: (page) {
+                                        productNotifier.activePage = page;
+                                      },
+                                      itemBuilder: (context, int index) {
+                                        return Stack(
+                                          children: [
+                                            Container(
+                                              height: 316.h,
+                                              width: 378.w,
+                                              color: Colors.white,
+                                              //color: Colors.grey.shade300,
+                                              child: CachedNetworkImage(
+                                                imageUrl:
+                                                    widget.sneakers.imageUrl[index],
+                                                fit: BoxFit.contain,
+                                              ),
+                                            ),
+                                            // Positioned(
+                                            //     right: 50,
+                                            //     top: 60,
+                                            //     child:
+                                            //        ),
                                             Positioned(
                                                 bottom: 0,
                                                 right: 0,
@@ -191,7 +196,7 @@ class _ProductPageState extends State<ProductPage> {
                                                       MainAxisAlignment.center,
                                                   children:
                                                       List<Widget>.generate(
-                                                          widget.sneakers                                                              .imageUrl.length,
+                                                          widget.sneakers.imageUrl.length,
                                                           (index) => Padding(
                                                                 padding: const EdgeInsets
                                                                     .symmetric(
@@ -222,9 +227,9 @@ class _ProductPageState extends State<ProductPage> {
                                           topRight: Radius.circular(30),
                                         ),
                                         child: Container(
-                                          height: 600.h,
+                                          height: 530.h,
                                           width: 378.w,
-                                          color: Colors.white,
+                                          color:const  Color.fromARGB(255, 244, 203, 231),
                                           child: Padding(
                                             padding: const EdgeInsets.all(12),
                                             child: Column(
@@ -234,7 +239,7 @@ class _ProductPageState extends State<ProductPage> {
                                                 Text(
                                                   widget.sneakers.name,
                                                   style: appstyle(
-                                                      40,
+                                                      35,
                                                       Colors.black,
                                                       FontWeight.bold),
                                                 ),
@@ -265,7 +270,7 @@ class _ProductPageState extends State<ProductPage> {
                                                               const Icon(
                                                         Icons.star,
                                                         size: 20,
-                                                        color: Colors.black,
+                                                        color: Colors.red,
                                                       ),
                                                       onRatingUpdate:
                                                           (rating) {},

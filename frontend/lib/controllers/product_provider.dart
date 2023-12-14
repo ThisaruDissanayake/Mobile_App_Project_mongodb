@@ -58,17 +58,17 @@ class ProductNotifier extends ChangeNotifier {
 
   
 
-  void getCreams(String category,String id) {
-    if (category == "women's hair care product" ||
-        category == "women's skin care product" ||
-        category == "women's makeup product") {
-      sneaker = Helper().getFemaleSneakersById(id);
-    } else if (category == "Men's hair care product" ||
-        category == "Men's skin care product" ||
-        category == "Men's makeup product") {
-      sneaker = Helper().getMaleSneakersById(id);
-    } else {
-      sneaker = Helper().getKidSneakersById(id);
-    }
-  }
+  // void getCreams(String category,String id) {
+  //   if (category == "women's hair care product" ||
+  //       category == "women's skin care product" ||
+  //       category == "women's makeup product") {
+  //     sneaker = Helper().getFemaleSneakersById(id);
+  //   } else if (category == "Men's hair care product" ||
+  //       category == "Men's skin care product" ||
+  //       category == "Men's makeup product") {
+  //     sneaker = Helper().getMaleSneakersById(id);
+  //   } else {
+  //     sneaker = Helper().getKidSneakersById(id);
+  //   }
+  // }
 }
