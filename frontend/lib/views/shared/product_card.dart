@@ -114,8 +114,8 @@ class _ProductCardState extends State<ProductCard> {
 
                       },
                       child: favoritesNotifer.ids.contains(widget.id)
-                          ? const Icon(Icons.favorite)
-                          : const Icon(Icons.favorite_border),
+                          ? const Icon(Icons.favorite,color: Colors.red,size: 32,)
+                          : const Icon(Icons.favorite_border,color: Colors.red,size:32),
                     ),
                   ),
                 ],
@@ -147,27 +147,27 @@ class _ProductCardState extends State<ProductCard> {
                         text :widget.price,
                         style: appstyle(20, Colors.black, FontWeight.w700),
                       ),
-                      Row(
-                        children: [
-                          reusableText(
-                            text : "Colors",
-                            style: appstyle(18, Colors.grey, FontWeight.w500),
-                          ),
-                           SizedBox(
-                            width: 3.w,
-                          ),
-                          ChoiceChip(
-                            label: const Text(""),
-                            selected: selected,
-                            visualDensity: VisualDensity.compact,
-                            selectedColor: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                  50.0), // Adjust the radius as needed
-                            ),
-                          )
-                        ],
-                      )
+                      //Row(
+                        // children: [
+                        //   reusableText(
+                        //     text : "Colors",
+                        //     style: appstyle(18, Colors.grey, FontWeight.w500),
+                        //   ),
+                        //    SizedBox(
+                        //     width: 3.w,
+                        //   ),
+                        //   ChoiceChip(
+                        //     label: const Text(""),
+                        //     selected: selected,
+                        //     visualDensity: VisualDensity.compact,
+                        //     selectedColor: Colors.black,
+                        //     shape: RoundedRectangleBorder(
+                        //       borderRadius: BorderRadius.circular(
+                        //           50.0), // Adjust the radius as needed
+                        //     ),
+                        //   )
+                        // ],
+                      //)
                     ]),
               )
             ],

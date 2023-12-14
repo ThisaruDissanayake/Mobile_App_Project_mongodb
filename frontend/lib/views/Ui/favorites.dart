@@ -148,7 +148,7 @@ class _FavoritesState extends State<Favorites> {
                                     MaterialPageRoute(
                                         builder: (context) =>  MainScreen()));
                               },
-                              child: const Icon(Icons.heart_broken),
+                              child: const Icon(Icons.heart_broken,color:Colors.red,size:32 ,),
                             ),
                           )
                         ],
