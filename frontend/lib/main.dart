@@ -57,7 +57,7 @@ return ScreenUtilInit(
     return StreamProvider<UserModel?>.value(
       initialData: UserModel(uid: ""),
       value: AuthServices().user,
-      
+     
       child: MaterialApp(
         
         debugShowCheckedModeBanner: false,
