@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:frontend/models/UserModel.dart';
+ import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthServices {
   //create fb instance
@@ -26,6 +27,61 @@ class AuthServices {
       return null;
     }
   }
+
+// signInWithGoogle() async {
+//     // Trigger the authentication flow
+//     final GoogleSignInAccount? googleUser = await GoogleSignIn(
+//         scopes: <String>["email"]).signIn();
+
+//     // Obtain the auth details from the request
+//     final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
+
+//     // Create a new credential
+//     final credential = GoogleAuthProvider.credential(
+//       accessToken: googleAuth.accessToken,
+//       idToken: googleAuth.idToken,
+//     );
+
+//     // Once signed in, return the UserCredential
+//     return await FirebaseAuth.instance.signInWithCredential(credential);
+//   }
+
+
+
+
+
+
+
+
+  Future<UserModel?> signInWithGoogle() async {
+  try {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn(
+        scopes: <String>["email"]).signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    // Sign in with the credential
+    final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
+
+    // Extract the user from the result
+    final User? user = authResult.user;
+
+    // Return a UserModel
+    return _userWithFirebaseUserUid(user);
+  } catch (err) {
+    print("Error signing in with Google: $err");
+    return null;
+  }
+}
+
 
   //register using email and pwd
   Future registerWithEmailAndPassword(String email, String password) async {

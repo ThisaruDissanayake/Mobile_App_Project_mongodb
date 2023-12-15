@@ -116,7 +116,8 @@ class _RegisterState extends State<Register> {
                             ),
                             GestureDetector(
                               onTap: () async {
-                                //go to google login
+                               dynamic result =
+                                        await _auth.signInWithGoogle();
                               },
                               child: CircleAvatar(
                           radius: 25,
