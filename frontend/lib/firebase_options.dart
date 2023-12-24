@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -53,11 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBhsC1ziFQeFmP1XqZSMuUj-e_2hMpMdQs',
-    appId: '1:127251220492:android:936603dc824c469bd28629',
-    messagingSenderId: '127251220492',
-    projectId: 'newcosmetic2-24501',
-    databaseURL: 'https://newcosmetic2-24501-default-rtdb.firebaseio.com',
-    storageBucket: 'newcosmetic2-24501.appspot.com',
+    apiKey: 'AIzaSyBSSeFFgs9WMf9LSMn_FE_kdf_RdAJTovo',
+    appId: '1:1065605673572:android:a5c342cd200172a9bbe571',
+    messagingSenderId: '1065605673572',
+    projectId: 'cosmetic-f85b5',
+    storageBucket: 'cosmetic-f85b5.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBWGavnF5K5px_UsP0p-Jr5r2ClOf55VUk',
+    appId: '1:1065605673572:ios:54efa1cfcfd4ddb0bbe571',
+    messagingSenderId: '1065605673572',
+    projectId: 'cosmetic-f85b5',
+    storageBucket: 'cosmetic-f85b5.appspot.com',
+    iosBundleId: 'com.example.frontend',
   );
 }

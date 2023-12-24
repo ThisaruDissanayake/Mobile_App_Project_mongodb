@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend/constants/colors.dart';
 import 'package:frontend/constants/styles.dart';
 import 'package:frontend/services/auth.dart';
+import 'package:frontend/views/Ui/mainscreen.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggle;
@@ -126,10 +127,16 @@ class _SignInState extends State<SignIn> {
                                           await _auth.signInWithGoogle();
 
                                       if (result != null) {
-                                        print("Results are null");
+                                        Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MainScreen()), // Replace MainScreen with your actual main screen widget
+                                      );
                                       }
                                     } catch (e) {
-                                      print(e);
+                                      print("Sign-in result: $e");
+;
                                     }
                                   },
                                   child: const CircleAvatar(
